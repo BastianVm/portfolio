@@ -170,7 +170,7 @@
                 <h2>Projets Réalisés</h2>
                 <p>Voici quelques-uns des projets sur lesquels j'ai travaillé :</p>
                 <ul>
-                    <li><b>Projet M@ Banque</b> - Nous avons du développer un site web ainsi qu'une base de données avec xamp et phpmyadmin pour qu'un utilisateur puisse se connecter au compte de sa banque en ligne.</li>
+                    <li><b>Projet M@ Banque</b> - Nous avons du développer un site web ainsi qu'une base de données avec xampp et phpmyadmin pour qu'un utilisateur puisse se connecter au compte de sa banque en ligne.</li>
                 </ul>
             </div>
 
@@ -188,9 +188,12 @@
     </div>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Bastian VIVIER-MERLE. Tous droits réservés. | <a href="mailto:bastian.viviermerle@gmail.com">Me contacter</a></p>
+        <p>&copy; <span id="année"></span> Bastian VIVIER-MERLE. Tous droits réservés. | <a href="mailto:bastian.viviermerle@gmail.com">Me contacter</a></p>
     </footer>
 
+    <script>
+        document.getElementById('année').textContent = new Date().getFullYear();
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
