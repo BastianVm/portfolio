@@ -79,10 +79,39 @@ body {
     border-radius: 0 0 8px 8px;
     animation: fadeIn 1.5s ease;
 }
+
+/* Conteneur général de l'onglet À propos de moi */
+#à-propos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    text-align: center; /* Centrer le texte à l'intérieur */
+    min-height: 100vh; /* Garantit que l'élément occupe toute la hauteur de la vue */
+    padding: 20px;
+}
+
+/* Centrer le texte dans les paragraphes */
+#à-propos p {
+    margin: 0 auto; /* Centrer horizontalement */
+    max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+}
+
+/* Titres <h2> soulignés et en gras */
 .tab-content h2 {
-    color: #eaeaea;
+    color: #fff; 
     margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #8b0000;
     animation: fadeIn 1s ease;
+}
+
+/* Bienvenue ! : Reste en rouge */
+#accueil h2 {
+    font-weight: bold;
+    color: #8b0000;
+    text-decoration: none;
 }
 
 /* Compétences */
@@ -141,7 +170,54 @@ footer a:hover {
     text-decoration: underline;
     color: #fff;
 }
-/* Footer prend tout l'espace disponible*/
+
+/* Footer prend tout l'espace disponible */
 .container {
     flex: 1;
+}
+
+/* Scroll Animation */
+#descendre {
+    cursor: pointer;
+    display: inline-block;
+    animation: fadeIn 2s ease;
+    position: relative;
+}
+#descendre:hover {
+    color: #fff;
+    animation: bounce 1s;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .accueil-section .display-4 {
+        font-size: 2rem;
+    }
+    .competence-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .accueil-section .display-4 {
+        font-size: 1.5rem;
+    }
+    .competence-item img {
+        width: 30px;
+    }
+    .btn-primary {
+        font-size: 0.9rem;
+    }
 }
