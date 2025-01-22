@@ -16,7 +16,13 @@
             <h1 class="display-4">Bienvenue sur le Portfolio de</h1>
             <h1 class="display-4">Bastian VIVIER-MERLE</h1>
             <p class="lead">Étudiant en BTS SIO option SLAM.</p>
-            <a href="#a-propos" class="btn btn-primary">Découvrir mon portfolio</a>
+            <a class="btn btn-primary" id="descendre">Découvrir mon portfolio</a>
+
+            <script>
+                document.getElementById('descendre').addEventListener('click', function() {
+                    window.scrollBy(0, window.innerHeight / 2);
+                });
+            </script>
         </div>
     </section>
 
