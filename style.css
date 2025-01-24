@@ -10,6 +10,27 @@ body {
     min-height: 100vh;
 }
 
+/*Image d'accueil*/
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/accueil.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
 /* Animation globale */
 @keyframes fadeIn {
     from {
@@ -20,6 +41,14 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/*Texte "Portfolio BTS SIO - SLAM"*/
+.prfl-title {
+    color:#8b0000;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
 }
 
 /* Section Accueil */
