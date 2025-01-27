@@ -113,17 +113,17 @@ body, html {
 #à-propos {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
-    text-align: center; /* Centrer le texte à l'intérieur */
-    min-height: 100vh; /* Garantit que l'élément occupe toute la hauteur de la vue */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
     padding: 20px;
 }
 
-/* Centrer le texte dans les paragraphes */
+/* Centrer le texte dans le paragraphes a propos */
 #à-propos p {
-    margin: 0 auto; /* Centrer horizontalement */
-    max-width: 800px; /* Limite la largeur du texte pour une meilleure lisibilité */
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 /* Titres <h2> soulignés et en gras */
@@ -167,7 +167,7 @@ body, html {
     animation: fadeIn 1.2s ease;
 }
 
-/* Boutons */
+/* Tous les boutons */
 .btn-primary {
     background-color: #8b0000;
     border-color: #720000;
@@ -205,7 +205,7 @@ footer a:hover {
     flex: 1;
 }
 
-/* Scroll Animation */
+/* Scroll Animation du bouton Decouvrir */
 #descendre {
     cursor: pointer;
     display: inline-block;
@@ -215,17 +215,6 @@ footer a:hover {
 #descendre:hover {
     color: #fff;
     animation: bounce 1s;
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
 }
 
 /* Responsive Design */
