@@ -1,4 +1,5 @@
 /*CECI EST UN STYLE CSS POUR AFFICHER LE PORTFOLIO EN THEME CLAIRE !!*/
+/* Style générale */
 body {
     font-family: 'Roboto', sans-serif;
     color: #000000;
@@ -11,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* Styles pour le bouton de bascule a thème */
+/* Bouton de bascule de thème */
 .theme-btn {
     position: fixed;
     bottom: 20px;
@@ -42,7 +43,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/images/accueil-light.jpg');
+    background-image: url('assets/images/accueil-tc.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -75,12 +76,15 @@ body, html {
     color: #000000;
     padding: 100px 0;
     animation: fadeIn 1.5s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .accueil-section .display-4 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
     animation: fadeIn 1.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .accueil-section .btn-primary {
     background-color: #8b0000;
@@ -89,6 +93,7 @@ body, html {
     font-size: 1.2rem;
     padding: 10px 30px;
     animation: fadeIn 1.8s ease-in-out;
+    border-radius: 25px;
 }
 .accueil-section .btn-primary:hover {
     background-color: #720000;
@@ -138,7 +143,7 @@ body, html {
     padding: 20px;
 }
 
-/* Centrer le texte dans le paragraphes a propos */
+/* Centrer le texte dans les paragraphes à propos */
 #à-propos p {
     margin: 0 auto;
     max-width: 800px;
@@ -173,12 +178,12 @@ body, html {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.8s ease;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 .competence-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .competence-item img {
     width: 40px;
     margin-right: 15px;
@@ -191,6 +196,8 @@ body, html {
     border-color: #720000;
     color: #ffffff;
     animation: fadeIn 1.5s ease-in-out;
+    border-radius: 25px;
+    padding: 10px 30px;
 }
 .btn-primary:hover {
     background-color: #720000;
