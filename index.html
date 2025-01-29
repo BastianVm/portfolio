@@ -6,32 +6,28 @@
     <title>Portfolio de Bastian VIVIER-MERLE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-sombre.css">
     <link rel="icon" href="assets/icons/favicon.ico.png" type="image/x-icon">
 </head>
 <body>
 <div class="background"></div>    
 <!--Script Mode Sombre/Claire-->
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<button id="themeclairebtn" class="theme-btn">🌓</button>
+<link id="theme-claire" rel="stylesheet" href="theme-claire.css">
+
 <script>
-  function addDarkmodeWidget() {
-    const options = {
-      bottom: '72px',
-      right: '32px',
-      left: 'unset',
-      time: '0.5s',
-      mixColor: '#fff',
-      backgroundColor: '#fff',
-      buttonColorDark: '#fff',
-      buttonColorLight: '#100f2c',
-      label: '🌓', 
-      autoMatchOsTheme: true
-    };
-    const darkmode = new Darkmode(options);
-    darkmode.showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
+    document.getElementById('themeclairebtn').addEventListener('click', function() {
+        const currentTheme = document.getElementById('theme-claire');
+        if (currentTheme.getAttribute('href') === 'theme-sombre.css') {
+            currentTheme.setAttribute('href', 'theme-claire.css');
+            this.textContent = '🌓';
+        } else {
+            currentTheme.setAttribute('href', 'theme-sombre.css');
+            this.textContent = '🌓';
+        }
+    });
 </script>
+
     <!-- Page d'accueil -->
     <section class="accueil-section text-center">
         <div class="container">
