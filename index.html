@@ -18,14 +18,18 @@
 <script>
     document.getElementById('themeclairebtn').addEventListener('click', function() {
         const currentTheme = document.getElementById('theme-claire');
-        if (currentTheme.getAttribute('href') === 'theme-sombre.css') {
-            currentTheme.setAttribute('href', 'theme-claire.css');
+        if (currentTheme.getAttribute('href') === 'theme-claire.css') {
+            currentTheme.setAttribute('href', 'theme-sombre.css');
             this.textContent = '🌓';
         } else {
-            currentTheme.setAttribute('href', 'theme-sombre.css');
+            currentTheme.setAttribute('href', 'theme-claire.css');
             this.textContent = '🌓';
         }
     });
+
+    // Appliquer le thème sombre par défaut
+    document.getElementById('theme-claire').setAttribute('href', 'theme-sombre.css');
+    document.getElementById('themeclairebtn').textContent = '🌓';
 </script>
 
     <!-- Page d'accueil -->

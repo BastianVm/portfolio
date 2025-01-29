@@ -1,8 +1,9 @@
 /*CECI EST UN CSS POUR AFFICHER LE PORTFOLIO EN THEME SOMBRE !*/
+/* Style général */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #eaeaea;
-    background-color: #121212;
+    color: #ffffff;
+    background-color: #000000;
     line-height: 1.6;
     transition: background-color 0.5s ease, color 0.5s ease;
     margin: 0;
@@ -11,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* Styles pour le bouton de bascule a thème*/
+/* Bouton de bascule de thème */
 .theme-btn {
     position: fixed;
     bottom: 20px;
@@ -19,7 +20,7 @@ body {
     width: 40px;
     height: 40px;
     background-color: #8b0000;
-    border: 2px solid #ffffff;
+    border: 2px solid #000000;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s;
@@ -28,7 +29,7 @@ body {
     transform: scale(1.1);
 }
 
-/*Image d'accueil*/
+/* Image d'accueil */
 body, html {
     margin: 0;
     padding: 0;
@@ -42,7 +43,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/images/accueil.jpg');
+    background-image: url('assets/images/accueil-ts.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,9 +62,9 @@ body, html {
     }
 }
 
-/*Texte "Portfolio BTS SIO - SLAM"*/
+/* Texte "Portfolio BTS SIO - SLAM" */
 .prfl-title {
-    color:#ffffff;
+    color: #ffffff;
     font-weight: bold;
     text-align: center;
     align-items: center;
@@ -71,24 +72,28 @@ body, html {
 
 /* Section Accueil */
 .accueil-section {
-    background: linear-gradient(to right, #0d0d0d, #262626);
-    color: #eaeaea;
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: #ffffff;
     padding: 100px 0;
     animation: fadeIn 1.5s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .accueil-section .display-4 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
     animation: fadeIn 1.2s ease-in-out;
+    text-shadow: 1.5px 1.5px 3px rgba(255, 255, 255, 0.6);
 }
 .accueil-section .btn-primary {
     background-color: #8b0000;
     border-color: #8b0000;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.2rem;
     padding: 10px 30px;
     animation: fadeIn 1.8s ease-in-out;
+    border-radius: 25px;
 }
 .accueil-section .btn-primary:hover {
     background-color: #720000;
@@ -98,7 +103,7 @@ body, html {
 
 /* Onglets de navigation */
 .nav-tabs {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #333333;
 }
 .nav-tabs .nav-link {
     color: #8b0000;
@@ -109,18 +114,18 @@ body, html {
 }
 .nav-tabs .nav-link:hover {
     opacity: 1;
-    color: #fff;
+    color: #ffffff;
 }
 .nav-tabs .nav-link.active {
     background-color: #8b0000;
-    color: #fff;
+    color: #ffffff;
     animation: fadeIn 1.5s ease;
 }
 
 /* Contenu des sections */
 .tab-content {
-    background: #1e1e1e;
-    border: 1px solid #333;
+    background: #1a1a1a;
+    border: 1px solid #333333;
     border-top: none;
     padding: 30px;
     border-radius: 0 0 8px 8px;
@@ -138,7 +143,7 @@ body, html {
     padding: 20px;
 }
 
-/* Centrer le texte dans le paragraphes a propos */
+/* Centrer le texte dans les paragraphes à propos */
 #à-propos p {
     margin: 0 auto;
     max-width: 800px;
@@ -146,7 +151,7 @@ body, html {
 
 /* Titres <h2> soulignés et en gras */
 .tab-content h2 {
-    color: #fff; 
+    color: #ffffff; 
     margin-bottom: 20px;
     font-weight: bold;
     text-decoration: underline;
@@ -154,7 +159,7 @@ body, html {
     animation: fadeIn 1s ease;
 }
 
-/* Bienvenue !*/
+/* Bienvenue ! */
 #accueil h2 {
     font-weight: bold;
     color: #8b0000;
@@ -189,8 +194,10 @@ body, html {
 .btn-primary {
     background-color: #8b0000;
     border-color: #720000;
-    color: #fff;
+    color: #ffffff;
     animation: fadeIn 1.5s ease-in-out;
+    border-radius: 25px;
+    padding: 10px 30px;
 }
 .btn-primary:hover {
     background-color: #720000;
