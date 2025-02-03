@@ -10,11 +10,10 @@
     <link rel="icon" href="assets/icons/favicon.ico.png" type="image/x-icon">
 </head>
 <body>
-<div class="background"></div>    
+<div class="background"></div>  
 <!--Script Mode Sombre/Claire-->
 <button id="themeclairebtn" class="theme-btn">🌓</button>
 <link id="theme-claire" rel="stylesheet" href="theme-claire.css">
-
 <script>
     document.getElementById('themeclairebtn').addEventListener('click', function() {
         const currentTheme = document.getElementById('theme-claire');
@@ -32,43 +31,43 @@
     document.getElementById('themeclairebtn').textContent = '🌓';
 </script>
 
-    <!-- Page d'accueil -->
-    <section class="accueil-section text-center">
-        <div class="container">
-            <h1 class="display-4">Bienvenue sur le Portfolio de</h1>
-            <h1 class="display-4">Bastian VIVIER-MERLE</h1>
-            <p class="lead">Étudiant en BTS SIO option SLAM.</p>
-            <a class="btn btn-primary" id="descendre">Découvrir mon portfolio :</a>
-            <script>
-                document.getElementById('descendre').addEventListener('click', function() {
-                    window.scrollBy(0, window.innerHeight / 2);
-                });
-            </script>    
+<!-- Page d'accueil -->
+<section class="accueil-section text-center">
+    <div class="container">
+        <h1 class="display-4">Bienvenue sur le Portfolio de</h1>
+        <h1 class="display-4">Bastian VIVIER-MERLE</h1>
+        <p class="lead">Étudiant en BTS SIO option SLAM.</p>
+        <a class="btn btn-primary" id="descendre">Découvrir mon portfolio :</a>
+        <script>
+            document.getElementById('descendre').addEventListener('click', function() {
+                window.scrollBy(0, window.innerHeight / 2);
+            });
+        </script>    
+    </div>
+</section>
+<div class="container my-5">
+    <h2 class="prfl-title">Portfolio BTS SIO - SLAM</h2>
+
+    <!-- Navigation des onglets -->
+    <ul class="nav nav-tabs justify-content-center" role="tablist">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#accueil" role="tab">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#a-propos" role="tab">À propos de moi</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#competences" role="tab">Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#stages" role="tab">Stages & Rapports</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#synthese" role="tab">Tableau de Synthèse</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#veille" role="tab">Veille Technologique</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projets" role="tab">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#contact" role="tab">Contact</a></li>
+    </ul>
+
+    <!-- Contenu des onglets -->
+    <div class="tab-content">
+        <!-- Onglet Accueil -->
+        <div class="tab-pane fade show active" id="accueil" role="tabpanel">
+            <h2 class="text-center">Bienvenue !</h2>
+            <p class="text-center">Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
         </div>
-    </section>
-    <div class="container my-5">
-        <h2 class="prfl-title">Portfolio BTS SIO - SLAM</h2>
-
-        <!-- Navigation des onglets -->
-        <ul class="nav nav-tabs justify-content-center" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#accueil" role="tab">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#a-propos" role="tab">À propos de moi</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#competences" role="tab">Compétences</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#stages" role="tab">Stages & Rapports</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#synthese" role="tab">Tableau de Synthèse</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#veille" role="tab">Veille Technologique</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projets" role="tab">Projets</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#contact" role="tab">Contact</a></li>
-        </ul>
-
-        <!-- Contenu des onglets -->
-        <div class="tab-content">
-            <!-- Onglet Accueil -->
-            <div class="tab-pane fade show active" id="accueil" role="tabpanel">
-                <h2 class="text-center">Bienvenue !</h2>
-                <p class="text-center">Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
-            </div>
-            <!-- Onglet À propos de moi -->
+        <!-- Onglet À propos de moi -->
         <div class="tab-pane fade" id="a-propos" role="tabpanel">
             <h2 class="text-center">À propos de moi :</h2>
             <p class="text-center">Bonjour, je m'appelle Bastian VIVIER-MERLE, étudiant en 2ème année de BTS SIO option SLAM, spécialisé dans le développement d'applications et la gestion de bases de données.</p>
@@ -78,7 +77,7 @@
         </div>
         </div>
 
-           <!-- Onglet Compétences -->
+        <!-- Onglet Compétences -->
         <div class="tab-pane fade" id="competences" role="tabpanel">
             <h2>Compétences Techniques :</h2>
             <div class="row">
@@ -205,69 +204,67 @@
         </div>
     </div>
 </div>
-            <!-- Onglet Stages et Rapports de stage -->
-            <div class="tab-pane fade" id="stages" role="tabpanel">
-                <h2>Stages & Rapports :</h2>
-                <div class="section-stage">
-                    <h3>Stage 2024 :</h3>
-                    <h5>Période :</h5><p>Du 6 Mai 2024 au 7 Juin 2024 (5 semaines)</p>
-                    <p>Durant mon stage de 2024 que j'ai effectué chez Gerflor à Tarare, j'ai pu écrire un programme avec Sélénium pour tester si le site web s'affichait correctement avant chaque début de journée, rechercher différents bugs et traductions sur les sites allemand et français de Gerflor et enfin écrire un programme avec cypress en JavaScript pour tester les différents formulaire présents sur le site web.</p>
-                    <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" download="Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Télécharger le Rapport de Stage 2024</a>
-                    <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2024</a>
+        <!-- Onglet Stages et Rapports de stage -->
+        <div class="tab-pane fade" id="stages" role="tabpanel">
+            <h2>Stages & Rapports :</h2>
+            <div class="section-stage">
+                <h3>Stage 2024 :</h3>
+                <h5>Période :</h5><p>Du 6 Mai 2024 au 7 Juin 2024 (5 semaines)</p>
+                <p>Durant mon stage de 2024 que j'ai effectué chez Gerflor à Tarare, j'ai pu écrire un programme avec Sélénium pour tester si le site web s'affichait correctement avant chaque début de journée, rechercher différents bugs et traductions sur les sites allemand et français de Gerflor et enfin écrire un programme avec cypress en JavaScript pour tester les différents formulaire présents sur le site web.</p>
+                <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" download="Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Télécharger le Rapport de Stage 2024</a>
+                <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2024</a>
 
-                </div>
-                <br>
-                <div class="section-stage">
-                    <h3>Stage 2025 :</h3>
-                    <h5>Période :</h5><p>Du 6 Janvier 2025 au 21 Février 2025 (7 semaines)</p>
-                    <p>En cours...</p>
-                    <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn btn-primary" download>Télécharger le Rapport de Stage 2025</a>
-                    <a href="rapport_2025.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2025</a>
-                </div>
             </div>
-
-            <!-- Onglet Tableau de Synthèse -->
-            <div class="tab-pane fade" id="synthese" role="tabpanel">
-                <h2>Tableau de Synthèse :</h2>
-                <object data="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" type="application/pdf" width="100%" height="500px">
-                    <p>Le tableau de synthèse n'est pas affichable. <a href="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" download>Télécharger le tableau de synthèse</a>.</p>
-                </object>
+            <br>
+            <div class="section-stage">
+                <h3>Stage 2025 :</h3>
+                <h5>Période :</h5><p>Du 6 Janvier 2025 au 21 Février 2025 (7 semaines)</p>
+                <p>En cours...</p>
+                <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn btn-primary" download>Télécharger le Rapport de Stage 2025</a>
+                <a href="rapport_2025.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2025</a>
             </div>
+        </div>
 
-            <!-- Onglet Veille Technologique -->
-            <div class="tab-pane fade" id="veille" role="tabpanel">
-                <h2>Veille Technologique :</h2>
-                <object data="assets/pdf/Veille sur L’impression 3D.pdf" type="application/pdf" width="100%" height="500px">
-                    <p>La veille technologique n'est pas affichable. <a href="assets/pdf/Veille sur L’impression 3D.pdf" download>Télécharger la veille technologique</a>.</p>
-                </object>
-            </div>
+        <!-- Onglet Tableau de Synthèse -->
+        <div class="tab-pane fade" id="synthese" role="tabpanel">
+            <h2>Tableau de Synthèse :</h2>
+            <object data="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" type="application/pdf" width="100%" height="500px">
+                <p>Le tableau de synthèse n'est pas affichable. <a href="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" download>Télécharger le tableau de synthèse</a>.</p>
+            </object>
+        </div>
 
-            <!-- Onglet Projets -->
-            <div class="tab-pane fade" id="projets" role="tabpanel">
-                <h2>Projets Réalisés :</h2>
-                <p>Voici quelques-uns des projets sur lesquels j'ai travaillé :</p>
-                <ul>
-                    <li><b>Projet M@ Banque</b> - Nous avons du développer un site web ainsi qu'une base de données avec xampp et phpmyadmin pour qu'un utilisateur puisse se connecter au compte de sa banque en ligne.</li>
-                </ul>
-            </div>
+        <!-- Onglet Veille Technologique -->
+        <div class="tab-pane fade" id="veille" role="tabpanel">
+            <h2>Veille Technologique :</h2>
+            <object data="assets/pdf/Veille sur L’impression 3D.pdf" type="application/pdf" width="100%" height="500px">
+                <p>La veille technologique n'est pas affichable. <a href="assets/pdf/Veille sur L’impression 3D.pdf" download>Télécharger la veille technologique</a>.</p>
+            </object>
+        </div>
 
-            <!-- Onglet Contact -->
-<div class="tab-pane fade" id="contact" role="tabpanel">
-    <h2>Contact :</h2>
-    <p>Pour toute information, vous pouvez me contacter via :</p>
-    <ul>
-        <li><i class="fas fa-envelope"></i> Email : <a href="mailto: bastian.viviermerle@gmail.com">bastian.viviermerle@gmail.com</a></li>
-        <li><i class="fab fa-linkedin"></i> LinkedIn : <a href="https://www.linkedin.com/in/bastian-vivier-merle-2420b82a8/" target="_blank">Bastian Vivier-Merle</a></li>
-</div>
-</div>
-</div>
+        <!-- Onglet Projets -->
+        <div class="tab-pane fade" id="projets" role="tabpanel">
+            <h2>Projets Réalisés :</h2>
+            <p>Voici quelques-uns des projets sur lesquels j'ai travaillé :</p>
+            <ul>
+                <li><b>Projet M@ Banque</b> - Nous avons du développer un site web ainsi qu'une base de données avec xampp et phpmyadmin pour qu'un utilisateur puisse se connecter au compte de sa banque en ligne.</li>
+            </ul>
+        </div>
+
+        <!-- Onglet Contact -->
+        <div class="tab-pane fade" id="contact" role="tabpanel">
+            <h2>Contact :</h2>
+            <p>Pour toute information, vous pouvez me contacter via :</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email : <a href="mailto: bastian.viviermerle@gmail.com">bastian.viviermerle@gmail.com</a></li>
+                <li><i class="fab fa-linkedin"></i> LinkedIn : <a href="https://www.linkedin.com/in/bastian-vivier-merle-2420b82a8/" target="_blank">Bastian Vivier-Merle</a></li>
         </div>
     </div>
+</div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; <span id="année"></span> Bastian VIVIER-MERLE. Tous droits réservés. | <a href="mailto:bastian.viviermerle@gmail.com">Me contacter</a></p>
-    </footer>
-
+    </footer>   
     <script>
         document.getElementById('année').textContent = new Date().getFullYear();
     </script>
