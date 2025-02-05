@@ -72,7 +72,7 @@ body, html {
 
 /* Section Accueil */
 .accueil-section {
-    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    background: url('assets/images/fondb.jpg'); /*ou fond blanc*//*linear-gradient(to right, #ffffff, #f0f0f0);*/
     color: #000000;
     padding: 100px 0;
     animation: fadeIn 1.5s ease-in-out;
