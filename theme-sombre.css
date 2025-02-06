@@ -73,7 +73,9 @@ body, html {
 /* Section Accueil */
 .accueil-section {
     background: url('assets/images/fonda.jfif'); /*ou fond noir*//*linear-gradient(to right, #000000, #1a1a1a);*/
+    background-size: cover;
     color: #ffffff;
+    min-height: 100vh;
     padding: 100px 0;
     animation: fadeIn 1.5s ease-in-out;
     border-radius: 15px;
@@ -130,6 +132,7 @@ body, html {
     padding: 30px;
     border-radius: 0 0 8px 8px;
     animation: fadeIn 1.5s ease;
+    min-height: calc(100vh - 250px);
 }
 
 /* Conteneur général de l'onglet À propos de moi */
