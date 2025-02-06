@@ -1,10 +1,12 @@
 📚 Mon Portfolio BTS SIO SLAM :
-Dans le cadre de mon BTS SIO (Services Informatiques aux Organisations) en option SLAM (Solutions Logicielles et Applications Métiers), je dois réaliser un portfolio de mes deux années de BTS.
+- Dans le cadre de mon BTS SIO (Services Informatiques aux Organisations) en option SLAM (Solutions Logicielles et Applications Métiers), je dois réaliser un portfolio de mes deux années de BTS.
+
 
 🗣️ Langages utilisés :
 - 🏗️ HTML pour structurer mon portfolio.
 - 🎨 CSS pour le design et les couleurs de mon portfolio.
 - ✨ JavaScript pour les animations sur mon portfolio. 
+
 
 📁 Comment le projet est structuré ? :
 - 📝 index.html : Fichier principal.
@@ -13,10 +15,12 @@ Dans le cadre de mon BTS SIO (Services Informatiques aux Organisations) en optio
 - 📸 assets/images : Dossier contenant toutes les images utilisées sur le portfolio.
 - 📄 assets/pdf : Dossier contenant tous les fichiers PDF utilisés sur mon portfolio.
 
+
 🖥️ Comment cloner mon projet ? :
 - Ouvrir une console cmd
 - Se rendre dans le répertoire souhaité
 - Exécuter la commande suivante : git clone [URL du dépôt]
+
 
 ℹ️ Les différentes informations présentes sur mon portfolio :
 - 🔄 Navigation : Un menu de navigation pour permettre d’accéder aux différents onglets. 
