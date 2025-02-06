@@ -40,8 +40,12 @@
         <a class="btn btn-primary" id="descendre">Découvrir mon portfolio :</a>
         <script>
             document.getElementById('descendre').addEventListener('click', function() {
-                window.scrollBy(0, window.innerHeight / 2);
-            });
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+        });
+
         </script>    
     </div>
 </section>
@@ -275,5 +279,12 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--script pour que l'utilisateur soit toujours tout en haut de la page lorsqu'il entre ou la rafraichit-->
+    <script>
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
 </html>   
