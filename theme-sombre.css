@@ -201,6 +201,7 @@ body, html {
     animation: fadeIn 1.5s ease-in-out;
     border-radius: 25px;
     padding: 10px 30px;
+    margin-bottom: 15px;
 }
 .btn-primary:hover {
     background-color: #720000;
