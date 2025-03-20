@@ -210,6 +210,71 @@ body, html {
     transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
+/* Centrer le carousel */
+#veilleCarousel {
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste la taille des diapo */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Styles des boutons à droite et gauches des diapo */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    background: transparent;
+    border: 2px solid black;
+    transition: opacity 0s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Affiche les boutons quand la souris est sur les diapo */
+#veilleCarousel:hover .carousel-control-prev,
+#veilleCarousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* lesboutons disparaît après après un clic */
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    opacity: 0;
+}
+
+/* Taille des icônes des flèches */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Ajuste la position des boutons */
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+/* Animation de transition */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
 /* Footer */
 footer {
     background-color: #0d0d0d;
