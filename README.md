@@ -27,7 +27,6 @@
 - 👤 Présentation : Une brève présentation de moi ainsi que mon CV téléchargeable. 
 - 👨‍💻 Compétences : Une liste de chacune de mes compétences. 
 - 📑 Stages & Rapports : Une présentation de mes stages avec un résumé de ce que j’ai fait durant + Durée + bouton pour télécharger mes rapports. 
-- 📋 Tableau de synthèse : Un tableau de synthèse qui permet un suivi individualisé de l’acquisition des compétences professionnelles en rapport avec mes projets, téléchargeable. 
 - 🌐 Veille Technologique : Une veille technologique sur un sujet choisi en cours, téléchargeable. 
 - 🚧 Projets : Présentation de plusieurs de mes projets faits hors et en cours avec pour certains un rapport téléchargeable. 
 - ☎️ Contact : Un onglet contact, pour me contacter par LinkedIn ou par mail.

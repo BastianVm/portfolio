@@ -6,335 +6,508 @@
     <title>Portfolio de Bastian VIVIER-MERLE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="theme-sombre.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/icons/favicon.ico.png" type="image/x-icon">
 </head>
 <body>
-<div class="background"></div>  
-<!--Script Mode Sombre/Claire-->
-<button id="themeclairebtn" class="theme-btn">🌓</button>
-<link id="theme-claire" rel="stylesheet" href="theme-claire.css">
-<script>
-    document.getElementById('themeclairebtn').addEventListener('click', function() {
-        const currentTheme = document.getElementById('theme-claire');
-        if (currentTheme.getAttribute('href') === 'theme-claire.css') {
-            currentTheme.setAttribute('href', 'theme-sombre.css');
-            this.textContent = '🌓';
-        } else {
-            currentTheme.setAttribute('href', 'theme-claire.css');
-            this.textContent = '🌓';
-        }
-    });
 
-    // Appliquer le thème sombre par défaut
-    document.getElementById('theme-claire').setAttribute('href', 'theme-sombre.css');
-    document.getElementById('themeclairebtn').textContent = '🌓';
-</script>
+<div class="aurora-bg"></div>
+<div class="particles">
+    <div class="particle" style="left: 10%; animation-duration: 15s;"></div>
+    <div class="particle" style="left: 30%; animation-duration: 25s;"></div>
+    <div class="particle" style="left: 70%; animation-duration: 20s;"></div>
+    <div class="particle" style="left: 90%; animation-duration: 18s;"></div>
+</div>
 
-<!-- Page d'accueil -->
 <section class="accueil-section text-center">
-    <div class="container">
-        <h1 class="display-4">Bienvenue sur le Portfolio de</h1>
-        <h1 class="display-4">Bastian VIVIER-MERLE</h1>
-        <p class="lead">Étudiant en BTS SIO option SLAM.</p>
-        <a class="btn btn-primary" id="descendre">Découvrir mon portfolio :</a>
-        <script>
-            document.getElementById('descendre').addEventListener('click', function() {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: 'smooth'
-        });
-        });
+    <div class="hero-content">
+        <span class="hero-badge fade-in-up">Portfolio 2025</span>
+        <h1 class="display-4 fade-in-up delay-1">Bienvenue sur le Portfolio de <br> <span class="gradient-text">Bastian VIVIER-MERLE</span></h1>
+        <p class="lead fade-in-up delay-2">Étudiant en Bachelor UI & Web Design.</p>
+        
+        <a href="#contenu-principal" class="btn-gradient fade-in-up delay-2" id="descendre">
+            <span>Découvrir mon portfolio</span>
+            <i class="fas fa-arrow-down"></i>
+        </a>
+    </div>
 
-        </script>    
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
     </div>
 </section>
 
-<div class="container my-5">
-    <h2 class="prfl-title">Portfolio BTS SIO - SLAM</h2>
+<div class="container glass-card" id="contenu-principal">
+    
+    <h2 class="prfl-title text-center" style="padding-left: 0;">
+        Portfolio Bachelor UI & Web Design
+    </h2>
 
-    <!-- Barre de navigation des onglets -->
     <ul class="nav nav-tabs justify-content-center" role="tablist">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#accueil" role="tab">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#a-propos" role="tab">À propos de moi</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#competences" role="tab">Compétences</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#stages" role="tab">Stages & Rapports</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#synthese" role="tab">Tableau de Synthèse</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#veille" role="tab">Veille Technologique</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projets" role="tab">Projets</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#contact" role="tab">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#accueil" role="tab"><i class="fas fa-home"></i> Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#a-propos" role="tab"><i class="fas fa-user"></i> À propos</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#competences" role="tab"><i class="fas fa-code"></i> Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#stages" role="tab"><i class="fas fa-briefcase"></i> Stages</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#veille" role="tab"><i class="fas fa-newspaper"></i> Veille</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projets" role="tab"><i class="fas fa-project-diagram"></i> Projets</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#contact" role="tab"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
 
-    <!-- Contenu des onglets -->
     <div class="tab-content">
-        <!-- Onglet Accueil -->
+        
         <div class="tab-pane fade show active" id="accueil" role="tabpanel">
-            <h2 class="text-center">Bienvenue !</h2>
-            <p class="text-center">Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
+            <div class="welcome-card">
+                <h2 class="section-title">Bienvenue !</h2>
+                <p>Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Outils Maîtrisés</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Années d'études</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Semaines d'expérience</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Onglet À propos de moi -->
+
         <div class="tab-pane fade" id="a-propos" role="tabpanel">
-            <h2 class="text-center">À propos de moi :</h2>
-            <p class="text-center">Je m'appelle Bastian VIVIER-MERLE, j'ai 19 ans et je viens de Tarare (69170).</p>
-            <p class="text-center">Je suis actuellement étudiant en 2ème année de BTS SIO option SLAM, spécialisé dans le développement d'applications et la gestion de bases de données.</p>
-            <div class="text-center mt-4">
-            <a href="assets/pdf/CV Bastian VIVIER-MERLE 2024-2025.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
-            <a href="assets/pdf/CV Bastian VIVIER-MERLE 2024-2025.pdf" class="btn btn-primary">Visualiser mon CV</a>
-            <br></br>
-            <h2 class="text-center">Attestation MOOC CNIL - Atelier RGPD :</h2>
-            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(1).pdf" class="btn btn-primary">Module 1 - LE RGPD ET LES NOTIONS CLES :</a>
-            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(2).pdf" class="btn btn-primary">Module 2 - LES PRINCIPES DE LA PROTECTION DES DONNEES:</a>
-            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(3).pdf" class="btn btn-primary">Module 3 - LES RESPONSABILITES DES ACTEURS :</a>
-            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(4).pdf" class="btn btn-primary">Module 4 - LE DPO ET LES OUTILS DE LA CONFORMITE :</a>
-            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(5).pdf" class="btn btn-primary">Module 5 - LES COLLECTIVITES TERRITORIALES :</a>
-            <br></br>
-            <h2 class="text-center">Certification PIX :</h2>
-            <a href="assets/pdf/Certification PIX/attestation-pix-20230303.pdf" class="btn btn-primary">Certificaition PIX 2023 :</a>
-            <a href="assets/pdf/Certification PIX/attestation-pix-20250219.pdf" class="btn btn-primary">Certificaition PIX 2025 :</a>
-        </div>
+            <h2 class="section-title">À propos de moi</h2>
+            <p class="text-center mb-4">Je m'appelle Bastian VIVIER-MERLE, j'ai 20 ans et je viens de Tarare (69170).<br>
+            Actuellement en 3ème année de Bachelor UI & Web Design, après un BTS SIO option SLAM.</p>
+            
+            <div class="text-center mb-5">
+                <div class="btn-group-modern">
+                    <a href="assets/pdf/Bastian VIVIER-MERLE CV 2025-2026.pdf" class="btn-modern btn-download" download>
+                        <i class="fas fa-download"></i> Télécharger CV
+                    </a>
+                    <a href="assets/pdf/Bastian VIVIER-MERLE CV 2025-2026.pdf" class="btn-modern btn-view" target="_blank">
+                        <i class="fas fa-eye"></i> Voir CV
+                    </a>
+                </div>
+            </div>
+
+            <h3 class="subsection-title text-center">Certifications & Attestations</h3>
+            
+            <h5 class="text-center mt-4 mb-3" style="color: var(--muted);">Attestation MOOC CNIL - Atelier RGPD</h5>
+            <div class="certification-grid">
+                <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(1).pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-user-shield icon-gradient"></i></div>
+                    <div class="cert-title">Module 1</div>
+                    <div class="cert-desc">Le RGPD et les notions clés</div>
+                </a>
+                <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(2).pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-database icon-gradient"></i></div>
+                    <div class="cert-title">Module 2</div>
+                    <div class="cert-desc">Les principes de protection</div>
+                </a>
+                <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(3).pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-balance-scale icon-gradient"></i></div>
+                    <div class="cert-title">Module 3</div>
+                    <div class="cert-desc">Les responsabilités des acteurs</div>
+                </a>
+                <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(4).pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-tools icon-gradient"></i></div>
+                    <div class="cert-title">Module 4</div>
+                    <div class="cert-desc">Le DPO et outils conformité</div>
+                </a>
+                <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(5).pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-city icon-gradient"></i></div>
+                    <div class="cert-title">Module 5</div>
+                    <div class="cert-desc">Les collectivités territoriales</div>
+                </a>
+            </div>
+
+            <h5 class="text-center mt-5 mb-3" style="color: var(--muted);">Certification PIX</h5>
+            <div class="certification-grid">
+                <a href="assets/pdf/Certification PIX/attestation-pix-20230303.pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-award icon-gradient"></i></div>
+                    <div class="cert-title">PIX 2023</div>
+                    <div class="cert-desc">Attestation 2023</div>
+                </a>
+                <a href="assets/pdf/Certification PIX/attestation-pix-20250219.pdf" target="_blank" class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-medal icon-gradient"></i></div>
+                    <div class="cert-title">PIX 2025</div>
+                    <div class="cert-desc">Attestation 2025</div>
+                </a>
+            </div>
         </div>
 
-        <!-- Onglet Compétences -->
         <div class="tab-pane fade" id="competences" role="tabpanel">
-            <h2>Compétences Techniques :</h2>
+            <h2 class="section-title">Compétences Techniques</h2>
             <div class="row">
-        <!-- Compétences Langages -->
-        <div class="col-md-3">
-            <h3>Langage :</h3>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg
-                " alt="Logo HTML5" class="logo-competence">
-                <span>HTML5</span>  
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg
-                " alt="Logo CSS3" class="logo-competence">
-                <span>CSS3</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg
-                " alt="Logo PHP" class="logo-competence">
-                <span>PHP</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg
-                " alt="Logo JavaScript" class="logo-competence">
-                <span>JavaScript</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg
-                " alt="Logo Python" class="logo-competence">
-                <span>Python</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg
-                " alt="Logo C#" class="logo-competence">
-                <span>C#</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="Logo MySQL" class="logo-competence">
-                <span>SQL</span>
+                <div class="col-md-3">
+                    <h3 class="category-title">Langages</h3>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="HTML5" class="logo-competence">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS3" class="logo-competence">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" alt="PHP" class="logo-competence">
+                        <span>PHP</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS" class="logo-competence">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="logo-competence">
+                        <span>Python</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" class="logo-competence">
+                        <span>C#</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" class="logo-competence">
+                        <span>SQL</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="category-title">Frameworks & Tests</h3>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="logo-competence">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="Selenium" class="logo-competence">
+                        <span>Selenium</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" alt="Cypress" class="logo-competence">
+                        <span>Cypress</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="category-title">Outils & BDD</h3>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="logo-competence">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" alt="Visual Studio" class="logo-competence">
+                        <span>Visual Studio 22</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop" class="logo-competence">
+                        <span>Photoshop</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg" alt="Illustrator" class="logo-competence">
+                        <span>Illustrator</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" class="logo-competence">
+                        <span>Figma</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/datagrip/datagrip-original.svg" alt="DataGrip" class="logo-competence">
+                        <span>DataGrip</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="assets/images/Logo/ssms.png" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg'" alt="SSMS" class="logo-competence">
+                        <span>SSMS</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="logo-competence">
+                        <span>Git</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="Gitlab" class="logo-competence">
+                        <span>Gitlab</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" class="logo-competence">
+                        <span>Github</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h3 class="category-title">Systèmes</h3>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows" class="logo-competence">
+                        <span>Windows</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg" alt="Debian" class="logo-competence">
+                        <span>Debian</span>
+                    </div>
+                    <div class="competence-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" class="logo-competence">
+                        <span>Ubuntu</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Compétences Frameworks -->
-        <div class="col-md-3">
-            <h3>Framework :</h3>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg
-                " alt="Logo Laravel" class="logo-competence">
-                <span>Laravel</span>
-            </div>
-        </div>
-
-        <!-- Compétences Logiciels -->
-        <div class="col-md-3">
-            <h3>Logiciel & Outils :</h3>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg
-                " alt="Logo Visual Studio" class="logo-competence">
-                <span>Visual Studio 2022</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg
-                " alt="Logo Visual Studio Code" class="logo-competence">
-                <span>Visual Studio Code</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/datagrip/datagrip-original.svg
-                " alt="Logo DataGrip" class="logo-competence">
-                <span>DataGrip</span>
-            </div>
-            <div class="competence-item">
-                <img src="assets/images/Logo/ssms.png" alt="Logo SSMS" class="logo-competence">
-                <span>SQL Server Management Studio</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg
-                " alt="Logo Git" class="logo-competence">
-                <span>Git</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg
-                " alt="Logo Gitlab" class="logo-competence">
-                <span>Gitlab</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg
-                " alt="Logo Github" class="logo-competence">
-                <span>Github</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg
-                " alt="Logo Selenium" class="logo-competence">
-                <span>Selenium</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg
-                " alt="Logo Cypress" class="logo-competence">
-                <span>Cypress</span>
-            </div>
-        </div>
-
-        <!-- Compétences Systèmes d'exploitation -->
-        <div class="col-md-3">
-            <h3>SE/OS :</h3>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Logo Windows" class="logo-competence">
-                <span>Windows</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg
-                " alt="Logo Debian" class="logo-competence">
-                <span>Debian</span>
-            </div>
-            <div class="competence-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg
-                " alt="Logo Ubuntu" class="logo-competence">
-                <span>Ubuntu</span>
-            </div>
-        </div>
-    </div>
-</div>
-        <!-- Onglet Stages et Rapports de stage -->
         <div class="tab-pane fade" id="stages" role="tabpanel">
-            <h2>Stages & Rapports :</h2>
-            <div class="section-stage">
-                <h3>Stage 2024 :</h3>
-                <h5>Période :</h5><p>Du 6 Mai 2024 au 7 Juin 2024 (5 semaines)</p>
-                <p>Durant mon stage de 2024 que j'ai effectué chez Gerflor à Tarare, j'ai pu écrire un programme avec Sélénium pour tester si le site web s'affichait correctement avant chaque début de journée, rechercher différents bugs et traductions sur les sites allemand et français de Gerflor et enfin écrire un programme avec cypress en JavaScript pour tester les différents formulaire présents sur le site web.</p>
-                <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" download="Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Télécharger le Rapport de Stage 2024</a>
-                <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2024</a>
+            <h2 class="section-title">Parcours Professionnel</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">2025</div>
+                    <div class="timeline-content stage-card">
+                        <h3>Stage chez Gerflor</h3>
+                        <div class="stage-period"><i class="far fa-calendar-alt"></i> 6 Janvier - 21 Février (7 semaines)</div>
+                        <p>Durant ce second stage chez Gerflor, j'ai pu découvrir de A à Z le cycle de vie d'un projet ainsi que les différentes méthodologies utilisées. J'ai également pu découvrir comment était composé le code du site web sur Gitlab.</p>
+                        <div class="btn-group-modern">
+                            <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn-modern btn-download" download>
+                                <i class="fas fa-file-download"></i> Rapport 2025
+                            </a>
+                            <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn-modern btn-view" target="_blank">
+                                <i class="fas fa-eye"></i> Visualiser
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            </div>
-            <br>
-            <div class="section-stage">
-                <h3>Stage 2025 :</h3>
-                <h5>Période :</h5><p>Du 6 Janvier 2025 au 21 Février 2025 (7 semaines)</p>
-                <p>Durant ce second stage chez Gerflor, j'ai pu découvrir de A à Z le cycle de vie d'un projet ainsi que les différentes méthdologie utilisé, j'ai également pu découvrir comment était composé le code du site web sur Gitlab.</p>
-                <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn btn-primary" download>Télécharger le Rapport de Stage 2025</a>
-                <a href="assets/pdf/Rapport de stage 2025.pdf" class="btn btn-primary">Visualiser le Rapport de Stage 2025</a>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2024</div>
+                    <div class="timeline-content stage-card">
+                        <h3>Stage chez Gerflor</h3>
+                        <div class="stage-period"><i class="far fa-calendar-alt"></i> 6 Mai - 7 Juin (5 semaines)</div>
+                        <p>Développement de scripts Selenium pour tester l'affichage du site, recherche de bugs et traductions (FR/DE), et création de tests automatisés Cypress pour les formulaires.</p>
+                        <div class="btn-group-modern">
+                            <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn-modern btn-download" download>
+                                <i class="fas fa-file-download"></i> Rapport 2024
+                            </a>
+                            <a href="assets/pdf/Rapport de stage Bastian VIVIER-MERLE 2024.pdf" class="btn-modern btn-view" target="_blank">
+                                <i class="fas fa-eye"></i> Visualiser
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Onglet Tableau de Synthèse -->
-        <div class="tab-pane fade" id="synthese" role="tabpanel">
-            <h2>Tableau de Synthèse :</h2>
-            <iframe src="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" type="application/pdf" width="100%" height="500px">
-                <p>Le tableau de synthèse n'est pas affichable. <a href="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" download>Télécharger mon tableau de synthèse</a>.</p>
-            </iframe>
-            <a href="assets/pdf/TableauDeSynthese-E4-BTS SIO.pdf" class="btn btn-primary" download>Télécharger mon tableau de synthèse (Format PDF)</a>
-            <a href="assets/pdf/TableauDeSynthese-E4-BTS SIO.xlsx" class="btn btn-primary" download>Télécharger mon tableau de synthèse (Format Excel)</a>
-        </div>
-
-        <!-- Onglet Veille Technologique -->
         <div class="tab-pane fade" id="veille" role="tabpanel">
-            <h2>Veille Technologique :</h2>
-        <!-- Carousel -->
-        <div id="veilleCarousel" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/pdf/Veille/slide_1.JPG" class="d-block w-100" alt="Diapositive 1">
+            <h2 class="section-title">Veille Technologique</h2>
+
+            <div class="curriculum-selector">
+                <div class="curriculum-card active" onclick="switchVeille('bts', this)">
+                    <h4>BTS SIO - SLAM</h4>
+                    <small>Développement & Applis</small>
+                </div>
+                <div class="curriculum-card" onclick="switchVeille('bachelor', this)">
+                    <h4>Bachelor UI & Web Design</h4>
+                    <small>Design & Création</small>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="assets/pdf/Veille/slide_2.JPG" class="d-block w-100" alt="Diapositive 2">
+
+            <div id="veille-bts">
+                <div id="veilleCarousel" class="carousel slide carousel-modern" data-bs-ride="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/pdf/Veille/slide_1.JPG" class="d-block w-100" alt="Diapositive 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/pdf/Veille/slide_2.JPG" class="d-block w-100" alt="Diapositive 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/pdf/Veille/slide_3.JPG" class="d-block w-100" alt="Diapositive 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/pdf/Veille/slide_4.JPG" class="d-block w-100" alt="Diapositive 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#veilleCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#veilleCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="assets/pdf/Veille technologique Bastian.pptx" class="btn-modern btn-download" download>
+                        <i class="fas fa-file-powerpoint"></i> Télécharger ma veille technologique
+                    </a>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="assets/pdf/Veille/slide_3.JPG" class="d-block w-100" alt="Diapositive 3">
+
+            <div id="veille-bachelor" class="content-hidden">
+                <div class="text-center p-5">
+                    <i class="fas fa-laptop-code fa-3x mb-3 text-muted"></i>
+                    <h3>Veille Bachelor UI & Web Design</h3>
+                    <p class="text-muted">Contenu à venir...</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="assets/pdf/Veille/slide_4.JPG" class="d-block w-100" alt="Diapositive 4">
-            </div>
-        </div>
-        <!-- Boutons des slides -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#veilleCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"><!--Précédent --></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#veilleCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"><!--Suivant --></span>
-        </button>
-        </div>
-        <!-- Bouton de téléchargement -->
-            <a href="assets/pdf/Veille technologique Bastian.pptx" class="btn btn-primary" download>Télécharger ma veille technologique</a>
         </div>
 
-        <!-- Onglet Projets -->
         <div class="tab-pane fade" id="projets" role="tabpanel">
-            <h2>Projets Réalisés :</h2>
-            <p>Voici quelques-uns des projets sur lesquels j'ai travaillé :</p>
-            <ul>
-                <li><b>Projet LyonPalme - Planning entraînement </b> - Dans ce projet nous sommes un groupe de 3 qui doit développer une application Laravel permettant à l'association LyonPalme de gérer leur planning d'entraînement et de mettre ce dernier à jour si des entraîneurs se signal comme étant indisponible à une date.</li>
-                <br></br>
-                <li><b>Projet M@ Banque</b> - Nous avons dû développer un site web ainsi qu'une base de données avec xampp et phpmyadmin pour qu'un utilisateur puisse se connecter au compte de sa banque en ligne par groupe de 2/3 en fonction d'un cahier des charges donné.</li>
-                <br></br>
-                <li><b>TP GLPI </b> - Nous avons utilisé GLPI pour configurer les droits utilisateurs à travers différents profils (hotliner, admin, etc.). Le TP portait sur la gestion des habilitations et l’attribution des permissions dans un outil de gestion de parc.</li>
-                <br></br>
-                <a href="assets/pdf/Rapport AP Ma Banque Tony Bastian Omar.pdf" download="Rapport de AP M@Banque.pdf" class="btn btn-primary">Télécharger le Rapport du projet M@ Banque</a>
-                <br></br>
-                <a href="https://github.com/BastianVm" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-github"></i> Mon GitHub : BastianVm
-                </a>
-            </ul>
+            <h2 class="section-title">Projets Réalisés</h2>
+            
+            <div class="curriculum-selector">
+                <div class="curriculum-card active" onclick="switchProjets('bts', this)">
+                    <h4>BTS SIO - SLAM</h4>
+                    <small>Développement & Applis</small>
+                </div>
+                <div class="curriculum-card" onclick="switchProjets('bachelor', this)">
+                    <h4>Bachelor UI & Web Design</h4>
+                    <small>Design & Création</small>
+                </div>
+            </div>
+
+            <div id="projets-bts">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-swimmer"></i></div>
+                        <h3>LyonPalme</h3>
+                        <div class="project-tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Groupe de 3</span>
+                        </div>
+                        <p>Développement d'une application Laravel pour gérer le planning d'entraînement de l'association et la gestion des disponibilités des entraîneurs.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-university"></i></div>
+                        <h3>M@ Banque</h3>
+                        <div class="project-tags">
+                            <span class="tag">PHP/SQL</span>
+                            <span class="tag">XAMPP</span>
+                        </div>
+                        <p>Site web bancaire avec base de données. Gestion des comptes utilisateurs selon un cahier des charges précis.</p>
+                        <a href="assets/pdf/Rapport AP Ma Banque Tony Bastian Omar.pdf" class="btn-modern btn-view w-100 mt-3" download>Télécharger Rapport</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon"><i class="fas fa-server"></i></div>
+                        <h3>TP GLPI</h3>
+                        <div class="project-tags">
+                            <span class="tag">Administration</span>
+                            <span class="tag">Droits</span>
+                        </div>
+                        <p>Configuration de GLPI pour la gestion de parc informatique : gestion des habilitations, profils (hotliner, admin) et permissions.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-3">
+                     <a href="https://github.com/BastianVm" target="_blank" class="btn-modern btn-github">
+                        <i class="fab fa-github"></i> Mon GitHub : BastianVm
+                    </a>
+                </div>
+            </div>
+
+            <div id="projets-bachelor" class="content-hidden">
+                <div class="text-center p-5">
+                    <i class="fas fa-paint-brush fa-3x mb-3 text-muted"></i>
+                    <h3>Projets Bachelor UI & Web Design</h3>
+                    <p class="text-muted">Projets à venir...</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Onglet Contact -->
         <div class="tab-pane fade" id="contact" role="tabpanel">
-            <h2>Contact :</h2>
-            <p>Pour toute information, vous pouvez me contacter via :</p>
-            <ul>
-                <a href="mailto:bastian.viviermerle@gmail.com" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> Email : bastian.viviermerle@gmail.com
+            <h2 class="section-title">Me Contacter</h2>
+            <div class="contact-grid">
+                <a href="mailto:bastian.viviermerle@gmail.com" class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <p>bastian.viviermerle@gmail.com</p>
                 </a>
-                <br></br>
-                <a href="https://www.linkedin.com/in/bastian-vivier-merle-2420b82a8/" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-linkedin"></i> Mon LinkedIn : Bastian Vivier-Merle
+                
+                <a href="https://www.linkedin.com/in/bastian-vivier-merle-2420b82a8/" target="_blank" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>Bastian Vivier-Merle</p>
                 </a>
-                <br></br>
-                <a href="https://github.com/BastianVm" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-github"></i> Mon GitHub : BastianVm
+                
+                <a href="https://github.com/BastianVm" target="_blank" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <p>@BastianVm</p>
                 </a>
-            </ul>
+            </div>
         </div>
     </div>
 </div>
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="année"></span> Bastian VIVIER-MERLE. Tous droits réservés. | <a href="mailto:bastian.viviermerle@gmail.com">Me contacter</a></p>
-    </footer> 
-    <!--Script permettant de changer la date automatiquement dans le footer-->  
-    <script>
-        document.getElementById('année').textContent = new Date().getFullYear();
-    </script>
-    <!--script pour que l'utilisateur soit toujours tout en haut de la page lorsqu'il entre ou la rafraichit-->
-    <script>
-        window.addEventListener('beforeunload', function() {
-            window.scrollTo(0, 0);
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; <span id="année"></span> Bastian VIVIER-MERLE. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="mailto:bastian.viviermerle@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/bastian-vivier-merle-2420b82a8/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/BastianVm"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('année').textContent = new Date().getFullYear();
+
+    document.getElementById('descendre').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#contenu-principal').scrollIntoView({
+            behavior: 'smooth'
         });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    });
+
+    window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+    });
+
+    // SCRIPTS POUR GERER LE CLIC SUR LES CARTES DE SELECTION
+
+    // Fonction pour l'onglet Veille
+    function switchVeille(type, element) {
+        // Cacher tous les contenus
+        document.getElementById('veille-bts').style.display = 'none';
+        document.getElementById('veille-bachelor').style.display = 'none';
+
+        // Afficher le bon contenu
+        if(type === 'bts') {
+            document.getElementById('veille-bts').style.display = 'block';
+        } else {
+            document.getElementById('veille-bachelor').style.display = 'block';
+        }
+
+        // Gérer la classe active sur les cartes
+        // Enlève 'active' de tous les frères de l'élément cliqué
+        let cards = element.parentElement.children;
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].classList.remove('active');
+        }
+        // Ajoute 'active' sur l'élément cliqué
+        element.classList.add('active');
+    }
+
+    // Fonction pour l'onglet Projets
+    function switchProjets(type, element) {
+        // Cacher tous les contenus
+        document.getElementById('projets-bts').style.display = 'none';
+        document.getElementById('projets-bachelor').style.display = 'none';
+
+        // Afficher le bon contenu
+        if(type === 'bts') {
+            document.getElementById('projets-bts').style.display = 'block';
+        } else {
+            document.getElementById('projets-bachelor').style.display = 'block';
+        }
+
+        // Gérer la classe active
+        let cards = element.parentElement.children;
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].classList.remove('active');
+        }
+        element.classList.add('active');
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-</html>   
+</html>
