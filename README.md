@@ -1,32 +1,37 @@
-📚 Mon Portfolio BTS SIO SLAM :
-- Dans le cadre de mon BTS SIO (Services Informatiques aux Organisations) en option SLAM (Solutions Logicielles et Applications Métiers), je dois réaliser un portfolio de mes deux années de BTS.
+📚 Mon Portfolio :
+Dans le cadre de mon parcours, d'abord en BTS SIO (Services Informatiques aux Organisations) option SLAM, puis actuellement en Bachelor UI & Web Design, j'ai réalisé ce portfolio pour regrouper mes compétences et mes réalisations.
 
+🗣️ Langages & Outils utilisés :
+🏗️ HTML5 pour structurer mon portfolio.
 
-🗣️ Langages utilisés :
-- 🏗️ HTML pour structurer mon portfolio.
-- 🎨 CSS pour le design et les couleurs de mon portfolio.
-- ✨ JavaScript pour les animations sur mon portfolio. 
+🎨 CSS3 pour le design moderne (Glassmorphism, animations, particules).
 
+🅱️ Bootstrap pour la mise en page responsive et les composants (modales, carrousels).
+
+✨ JavaScript pour les interactions (sélecteurs BTS/Bachelor, animations au scroll).
 
 📁 Comment le projet est structuré ? :
-- 📝 index.html : Fichier principal.
-- 🎨 thème-sombre.css / thème-clair.css : Fichier de style CSS qui contient l’apparence du site en fonction du mode choisi (sombre/clair).
-- 🖼️ assets/icons : Dossier contenant les logos utilisés sur le portfolio.
-- 📸 assets/images : Dossier contenant toutes les images utilisées sur le portfolio.
-- 📄 assets/pdf : Dossier contenant tous les fichiers PDF utilisés sur mon portfolio.
+📝 index.html : Fichier principal contenant toute la structure de la page.
 
+🎨 style.css : Fichier de style unique qui gère tout le design (couleurs, effet verre, responsive).
 
-🖥️ Comment cloner mon projet ? :
-- Ouvrir une console cmd
-- Se rendre dans le répertoire souhaité
-- Exécuter la commande suivante : git clone [URL du dépôt]
+🖼️ assets/icons : Dossier contenant les favicons et logos.
 
+📸 assets/images : Dossier contenant toutes les images utilisées.
+
+📄 assets/pdf : Dossier contenant mon CV, mes rapports de stage et ma veille.
 
 ℹ️ Les différentes informations présentes sur mon portfolio :
-- 🔄 Navigation : Un menu de navigation pour permettre d’accéder aux différents onglets. 
-- 👤 Présentation : Une brève présentation de moi ainsi que mon CV téléchargeable. 
-- 👨‍💻 Compétences : Une liste de chacune de mes compétences. 
-- 📑 Stages & Rapports : Une présentation de mes stages avec un résumé de ce que j’ai fait durant + Durée + bouton pour télécharger mes rapports. 
-- 🌐 Veille Technologique : Une veille technologique sur un sujet choisi en cours, téléchargeable. 
-- 🚧 Projets : Présentation de plusieurs de mes projets faits hors et en cours avec pour certains un rapport téléchargeable. 
-- ☎️ Contact : Un onglet contact, pour me contacter par LinkedIn ou par mail.
+🔄 Navigation : Un menu de navigation fixe pour accéder rapidement aux sections.
+
+👤 Présentation : Une présentation de mon parcours avec mes Certifications (CNIL, PIX) et mon CV téléchargeable.
+
+👨‍💻 Compétences : Une visualisation graphique de mes compétences techniques (Langages, Frameworks, Outils).
+
+📑 Stages : Une Timeline interactive présentant mes stages chez Gerflor (2024 et 2025) avec rapports téléchargeables.
+
+🌐 Veille Technologique : Une section dynamique avec un sélecteur pour afficher ma veille de BTS ou celle du Bachelor.
+
+🚧 Projets : Présentation de mes projets avec un sélecteur (BTS / Bachelor) pour filtrer les réalisations, avec liens GitHub et rapports.
+
+☎️ Contact : Les liens directs pour me contacter par LinkedIn, GitHub ou par mail.
