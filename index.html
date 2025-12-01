@@ -62,16 +62,16 @@
                 <p>Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Outils Maîtrisés</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Années d'études</div>
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projets Réalisés</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">12</div>
                         <div class="stat-label">Semaines d'expérience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Outils Maîtrisés</div>
                     </div>
                 </div>
             </div>
@@ -458,45 +458,29 @@
         window.scrollTo(0, 0);
     });
 
-    // SCRIPTS POUR GERER LE CLIC SUR LES CARTES DE SELECTION
-
-    // Fonction pour l'onglet Veille
     function switchVeille(type, element) {
-        // Cacher tous les contenus
         document.getElementById('veille-bts').style.display = 'none';
         document.getElementById('veille-bachelor').style.display = 'none';
-
-        // Afficher le bon contenu
         if(type === 'bts') {
             document.getElementById('veille-bts').style.display = 'block';
         } else {
             document.getElementById('veille-bachelor').style.display = 'block';
         }
-
-        // Gérer la classe active sur les cartes
-        // Enlève 'active' de tous les frères de l'élément cliqué
         let cards = element.parentElement.children;
         for (let i = 0; i < cards.length; i++) {
             cards[i].classList.remove('active');
         }
-        // Ajoute 'active' sur l'élément cliqué
         element.classList.add('active');
     }
 
-    // Fonction pour l'onglet Projets
     function switchProjets(type, element) {
-        // Cacher tous les contenus
         document.getElementById('projets-bts').style.display = 'none';
         document.getElementById('projets-bachelor').style.display = 'none';
-
-        // Afficher le bon contenu
         if(type === 'bts') {
             document.getElementById('projets-bts').style.display = 'block';
         } else {
             document.getElementById('projets-bachelor').style.display = 'block';
         }
-
-        // Gérer la classe active
         let cards = element.parentElement.children;
         for (let i = 0; i < cards.length; i++) {
             cards[i].classList.remove('active');
