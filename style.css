@@ -1,5 +1,5 @@
 /* ===========================
-   STYLE.CSS – Portfolio (Corrigé Mobile)
+      STYLE.CSS – Portfolio
    =========================== */
 
 :root {
@@ -30,14 +30,14 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important; /* INTERDIT le scroll horizontal */
+  overflow-x: hidden !important;
 }
 
 body {
   height: 100%;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important; /* Double sécurité */
+  overflow-x: hidden !important;
   position: relative;
   background: var(--bg-main);
   color: var(--text);
@@ -138,13 +138,15 @@ body {
 
 /* ============ HERO SECTION ============ */
 .accueil-section {
-  min-height: 100vh !important;
+  min-height: 100vh;
+  min-height: 100dvh !important; 
+  
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-bottom: 80px;
-  background: transparent !important; /* IMPORTANT: Transparent pour voir le fond */
+  background: transparent !important;
   position: relative;
   overflow: hidden;
 }
@@ -710,9 +712,8 @@ footer {
 
 .footer-links a:hover { background: var(--primary); color: #fff; transform: translateY(-4px); }
 
-/* ============ RESPONSIVE MOBILE OPTIMISÉ (NOUVEAU) ============ */
+/* ============ RESPONSIVE MOBILE OPTIMISÉ ============ */
 @media (max-width: 767px) {
-  /* 1. Gestion de la carte principale */
   .glass-card {
     margin: 30px 10px !important;
     padding: 20px 15px !important;
@@ -720,7 +721,7 @@ footer {
     max-width: 100%;
   }
 
-  /* 2. Titre et padding */
+  /* Titre et padding */
   .prfl-title {
     padding-left: 0;
     text-align: center;
@@ -730,7 +731,7 @@ footer {
   .title-accent { display: none; }
   .display-4 { font-size: 2rem; }
 
-  /* 3. Navigation Verticale */
+  /* Navigation Verticale */
   .nav-tabs {
     flex-direction: column;
     width: 100%;
@@ -742,30 +743,36 @@ footer {
     justify-content: center;
     margin-bottom: 5px;
   }
-  .nav-tabs .nav-link i { display: inline-block !important; } /* On garde les icônes sur mobile aussi */
+  .nav-tabs .nav-link i { display: inline-block !important; }
 
-  /* 4. Forcer l'affichage sur une seule colonne */
+  /* Forcer l'affichage sur une seule colonne */
   .stats-grid,
   .certification-grid,
   .projects-grid,
   .contact-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important; /* 1 colonne stricte */
+    grid-template-columns: 1fr !important;
     gap: 20px;
     width: 100% !important;
   }
 
-  /* 5. Ajustement des cartes internes */
+  /* Ajustement des cartes internes */
   .stat-item,
   .certification-card,
   .project-card,
   .contact-card,
-  .competence-item,
   .timeline-content {
     width: 100% !important;
-    min-width: 0 !important; /* Permet au contenu de rétrécir si besoin */
+    min-width: 0 !important;
     margin: 0 !important;
     max-width: none !important;
+  }
+  
+  /* Ajout spécifique pour les compétences avec une marge */
+  .competence-item {
+      width: 100% !important;
+      margin: 0 0 15px 0 !important;
+      max-width: none !important;
   }
   
   /* Ajustement spécifique timeline */
