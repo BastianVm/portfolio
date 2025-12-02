@@ -12,12 +12,14 @@
 <body>
 
 <div class="aurora-bg"></div>
-<div class="particles">
-    <div class="particle" style="left: 10%; animation-duration: 15s;"></div>
-    <div class="particle" style="left: 30%; animation-duration: 25s;"></div>
-    <div class="particle" style="left: 70%; animation-duration: 20s;"></div>
-    <div class="particle" style="left: 90%; animation-duration: 18s;"></div>
+
+<div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
 </div>
+
+<div class="particles" id="particles-container"></div>
 
 <section class="accueil-section text-center">
     <div class="hero-content">
@@ -62,7 +64,7 @@
                 <p>Découvrez mes compétences, mes projets, et mon parcours professionnel.</p>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">10+</div>
+                        <div class="stat-number">15+</div>
                         <div class="stat-label">Projets Réalisés</div>
                     </div>
                     <div class="stat-item">
@@ -445,6 +447,43 @@
 </footer>
 
 <script>
+    // --- SCRIPT DE GÉNÉRATION DE PARTICULES ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('particles-container');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            const size = Math.random() * 3 + 1; 
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+            
+            container.appendChild(particle);
+        }
+    });
+
+    // --- 2. EFFET PARALLAXE SOURIS ---
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        const heroContent = document.querySelector('.hero-content');
+        if(heroContent) {
+            heroContent.style.transform = `translate(-${mouseX * 20}px, -${mouseY * 20}px)`;
+        }
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 15;
+            shape.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px) rotate(${index * 10}deg)`;
+        });
+    });
+
+    // --- FONCTIONS EXISTANTES ---
     document.getElementById('année').textContent = new Date().getFullYear();
 
     document.getElementById('descendre').addEventListener('click', function(e) {
@@ -494,5 +533,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
