@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compétences & Certifications — Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Fond dynamique subtil et texturé -->
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navbar Glassmorphism Flottante -->
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="presentation.html" class="nav-item">Présentation</a>
+        <a href="projets.html" class="nav-item">Projets</a>
+        <a href="competences.html" class="nav-item active">Compétences</a>
+        <a href="stage.html" class="nav-item">Stage</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main class="page-wrapper" style="padding-top: 140px; padding-bottom: 6rem; min-height: 85vh;">
+    <div class="container">
+      
+      <!-- En-tête de page -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">Mes</span> <span class="highlight-title">compétences</span>:</h2>
+        <p class="section-subtitle reveal-item">Un profil hybride combinant recherche UX, sens du détail graphique et rigueur d'intégration.</p>
+      </div>
+
+      <!-- Grille compétences -->
+      <div class="skills-overview-grid reveal-container" style="margin-bottom: 5rem;">
+        <div class="glass-card skill-card reveal-item">
+          <div class="skill-icon-wrap icon-design">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          </div>
+          <h3>UI / UX Design</h3>
+          <p>Recherche utilisateur, personas, wireframes haute fidélité, prototypes interactifs, ergonomie et design systems.</p>
+          <div class="skill-tags">
+            <span>Figma</span>
+            <span>Adobe XD</span>
+            <span>Photoshop</span>
+            <span>Illustrator</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-card reveal-item">
+          <div class="skill-icon-wrap icon-code">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <h3>Développement Front-End</h3>
+          <p>Intégration sémantique HTML5/CSS3, manipulation du DOM en JavaScript, responsive design et contrôle Git.</p>
+          <div class="skill-tags">
+            <span>HTML5 / CSS3</span>
+            <span>JavaScript</span>
+            <span>Git & GitHub</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Certifications : PIX -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">Certifications</span> <span class="highlight-title">PIX</span>:</h2>
+        <p class="section-subtitle reveal-item">Validation officielle des compétences numériques et de la culture digitale.</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">PIX · Juin 2023</div>
+            <h3>Attestation PIX</h3>
+            <p>Validation des socles fondamentaux des compétences numériques et de la maîtrise des outils digitaux de base.</p>
+            <a href="assets/pdf/Certification PIX/attestation-pix-20230303.pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter l'attestation (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">PIX · Février 2025</div>
+            <h3>Attestation PIX Avancée</h3>
+            <p>Validation globale des compétences numériques, sécurité des données, traitement de l'information et environnement numérique.</p>
+            <a href="assets/pdf/Certification PIX/attestation-pix-20250219.pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter l'attestation (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section Certifications : Projet Voltaire -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">Certification</span> <span class="highlight-title">Projet Voltaire</span>:</h2>
+        <p class="section-subtitle reveal-item">Validation officielle du niveau en orthographe et maîtrise de la langue française.</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item" style="display: flex; flex-direction: row; align-items: center; gap: 2rem; padding: 2.5rem; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; justify-content: center; min-width: 180px; margin: 0 auto;">
+            <img src="assets/pdf/Projet Voltaire/logo_cv.png" alt="Logo Projet Voltaire" style="max-height: 140px; max-width: 180px; object-fit: contain;">
+          </div>
+          <div class="project-body" style="padding: 0; flex: 1; min-width: 250px;">
+            <div class="project-meta">Projet Voltaire · Score : 335</div>
+            <h3 style="margin-top: 0.2rem; margin-bottom: 0.5rem;">Certificat Voltaire</h3>
+            <p style="margin-bottom: 0.8rem;">Maîtrise des difficultés de la langue française et des règles orthographiques et grammaticales professionnelles.</p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
+              Code de vérification : <span style="color: var(--primary);">UFDKGXF</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section Certifications : CNIL & RGPD -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">Certifications</span> <span class="highlight-title">CNIL (MOOC RGPD)</span>:</h2>
+        <p class="section-subtitle reveal-item">Parcours certifiant complet sur la protection des données personnelles et la conformité juridique.</p>
+      </div>
+
+      <div class="projects-grid reveal-container">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">CNIL · RGPD</div>
+            <h3>Module 1 : Le RGPD et ses notions clés</h3>
+            <p>Compréhension des grands principes de la protection des données et du cadre réglementaire européen.</p>
+            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(1).pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter le certificat (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">CNIL · RGPD</div>
+            <h3>Module 2 : Les principes de la protection des données</h3>
+            <p>Maîtrise des mesures techniques et organisationnelles pour garantir la sécurité des informations personnelles.</p>
+            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(2).pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter le certificat (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">CNIL · RGPD</div>
+            <h3>Module 3 : Les responsabilités des acteurs</h3>
+            <p>Étude des droits accordés aux individus (accès, rectification, effacement, portabilité) et de leur gestion pratique.</p>
+            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(3).pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter le certificat (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">CNIL · RGPD</div>
+            <h3>Module 4 : Le DPO et les outils de la conformité</h3>
+            <p>Analyse des rôles, des responsabilités et des missions des acteurs de la conformité au sein d'une structure.</p>
+            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(4).pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter le certificat (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-body">
+            <div class="project-meta">CNIL · RGPD</div>
+            <h3>Module 5 : Les collectivités territoriales</h3>
+            <p>Mise en œuvre opérationnelle de la conformité (registre des traitements, analyse d'impact, gestion des violations).</p>
+            <a href="assets/pdf/Attestation MOOC CNIL/Certificat_(5).pdf" target="_blank" class="card-arrow-btn">
+              <span>Consulter le certificat (PDF)</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Présentation — Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Fond dynamique subtil et texturé -->
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navbar Glassmorphism Flottante -->
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="presentation.html" class="nav-item active">Présentation</a>
+        <a href="projets.html" class="nav-item">Projets</a>
+        <a href="competences.html" class="nav-item">Compétences</a>
+        <a href="stage.html" class="nav-item">Stage</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main class="page-wrapper" style="padding-top: 140px; padding-bottom: 6rem; min-height: 85vh;">
+    <div class="container">
+      
+      <!-- En-tête de page -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">À</span> propos de <span class="highlight-title">moi</span>.</h2>
+      </div>
+
+      <!-- Carte de présentation principale -->
+      <div class="glass-card presentation-card reveal-container" style="margin-bottom: 5rem;">
+        <div class="presentation-text reveal-item">
+          <h2>Bastian Vivier-Merle <span style="font-weight: 400; font-size: 1.2rem; color: var(--text-muted);">(21 ans)</span></h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem; color: var(--primary);">Designer UI/UX & Développeur Front-End</p>
+          
+          <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem;">
+            Actuellement à la recherche d'un emploi, je suis passionné par la conception et la réalisation d'interfaces numériques soignées. J'aime concevoir des expériences utilisateurs à la fois esthétiques, ergonomiques et fonctionnelles.
+          </p>
+          
+          <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem;">
+            De nature rigoureuse et autonome, j'attache une grande importance aux détails et à la qualité de mon travail. Curieux et motivé, j'aime constamment apprendre de nouvelles choses, explorer de nouveaux outils et relever de nouveaux défis techniques ou créatifs.
+          </p>
+
+          <div class="btn-group" style="margin-top: 2rem;">
+            <a href="assets/pdf/CV Bastian VIVIER-MERLE 2026.pdf" target="_blank" class="action-btn btn-primary">
+              <span>Télécharger mon CV 2026 (PDF)</span>
+              <span>&darr;</span>
+            </a>
+            <a href="contact.html" class="action-btn btn-glass">Me contacter</a>
+          </div>
+        </div>
+
+        <div class="presentation-avatar-wrap reveal-item">
+          <div class="avatar-glow"></div>
+          <img src="assets/images/photo-profil.png" alt="Bastian Vivier-Merle" class="presentation-avatar">
+        </div>
+      </div>
+
+      <!-- Titre de la section parcours -->
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">Mon</span> <span class="highlight-title">parcours</span>:</h2>
+      </div>
+
+      <!-- Grille du parcours -->
+      <div class="skills-overview-grid reveal-container">
+        
+        <div class="glass-card skill-card reveal-item">
+          <h3>Bachelor (Bac +3)</h3>
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Direction Artistique & Webdesign</p>
+          <p style="color: var(--text-main); font-size: 1rem; line-height: 1.7;">Formation approfondie en design d'interface, identité visuelle, ergonomie web et maîtrise des outils de création graphique et interactive.</p>
+        </div>
+
+        <div class="glass-card skill-card reveal-item">
+          <h3>BTS SIO (Bac +2)</h3>
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Option SLAM</p>
+          <p style="color: var(--text-main); font-size: 1rem; line-height: 1.7;">Solutions Logicielles et Applications Métiers. Apprentissage de la logique de développement, de la programmation web et de la gestion de projets techniques.</p>
+        </div>
+
+        <div class="glass-card skill-card reveal-item">
+          <h3>Lycée</h3>
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 0.4rem;">Bac STI2D — Mention Assez Bien</p>
+          <p style="color: var(--text-main); font-size: 1rem; line-height: 1.7;">Sciences et Technologies de l'Industrie et du Développement Durable, apportant une base solide en conception et en résolution de problèmes.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

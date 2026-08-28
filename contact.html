@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+      align-items: stretch;
+    }
+    .contact-info-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem;
+    }
+    .contact-form-card {
+      padding: 3rem;
+    }
+    .contact-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--glass-border);
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      word-break: break-all;
+    }
+    .contact-link-item:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--primary);
+      transform: translateX(4px);
+    }
+    .form-grid-custom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .form-group-custom {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .form-group-custom.full {
+      grid-column: span 2;
+    }
+    .form-group-custom label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+    .form-control-custom {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    .form-control-custom:focus {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+    }
+    .error-msg {
+      font-size: 0.8rem;
+      color: var(--primary);
+      display: none;
+      margin-top: 0.2rem;
+    }
+    @media screen and (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-custom {
+        grid-template-columns: 1fr;
+      }
+      .form-group-custom.full {
+        grid-column: span 1;
+      }
+      .contact-info-card, .contact-form-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fond dynamique subtil et texturé -->
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navbar Glassmorphism Flottante -->
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="presentation.html" class="nav-item">Présentation</a>
+        <a href="projets.html" class="nav-item">Projets</a>
+        <a href="competences.html" class="nav-item">Compétences</a>
+        <a href="stage.html" class="nav-item">Stage</a>
+        <a href="contact.html" class="nav-cta active">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main class="page-wrapper" style="padding-top: 140px; padding-bottom: 6rem; min-height: 85vh;">
+    <div class="container">
+      
+      <!-- En-tête de page -->
+      <div class="section-title-wrap reveal-container" style="margin-bottom: 3.5rem;">
+        <h2 class="reveal-item"><span class="title-first-word">Me</span> <span class="highlight-title">contacter</span> :</h2>
+        <p class="section-subtitle reveal-item" style="margin-top: 0.5rem;">Un projet, une opportunité professionnelle ou une question ? Échangeons ensemble.</p>
+      </div>
+
+      <div class="contact-grid reveal-container">
+        
+        <!-- Bloc Informations (Gauche) -->
+        <div class="glass-card contact-info-card reveal-item">
+          <div>
+            <span class="project-meta" style="display: block; margin-bottom: 0.5rem;">Informations directes</span>
+            <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main);">Restons en contact</h3>
+            <p class="text-muted" style="line-height: 1.6; font-size: 1.05rem;">
+              Actuellement à la recherche d'opportunités, je réponds rapidement aux messages concernant le développement front-end et le design UI/UX.
+            </p>
+
+            <div class="contact-links-list">
+              <a href="mailto:bastian.viviermerle@gmail.com" class="contact-link-item">
+                <span style="color: var(--primary);">&#9993;</span>
+                <span>bastian.viviermerle@gmail.com</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link-item">
+                <span style="color: var(--primary);">&#128279;</span>
+                <span>Mon profil LinkedIn &rarr;</span>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener" class="contact-link-item">
+                <span style="color: var(--primary);">&#128187;</span>
+                <span>Mon profil GitHub &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--glass-border); padding-top: 1.2rem;">
+            📍 Basé à Oullins (Métropole de Lyon) · France
+          </div>
+        </div>
+
+        <!-- Formulaire de Contact sécurisé (Droite) -->
+        <div class="glass-card contact-form-card reveal-item">
+          <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--text-main);">Envoyez-moi un message</h3>
+          
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="c94c28ea-96c7-4109-9a6a-aaa70a4e0e01">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-grid-custom">
+              <div class="form-group-custom">
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" name="prénom" class="form-control-custom" required maxlength="30" placeholder="Votre prénom">
+                <span id="error-firstname" class="error-msg">Caractères non autorisés.</span>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="lastname">Nom</label>
+                <input type="text" id="lastname" name="nom" class="form-control-custom" required maxlength="30" placeholder="Votre nom">
+                <span id="error-lastname" class="error-msg">Caractères non autorisés.</span>
+              </div>
+
+              <div class="form-group-custom full">
+                <label for="email">Adresse email</label>
+                <input type="email" id="email" name="email" class="form-control-custom" required maxlength="100" placeholder="nom@exemple.com">
+                <span id="error-email" class="error-msg">Veuillez entrer une adresse email valide.</span>
+              </div>
+
+              <div class="form-group-custom full">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="sujet" class="form-control-custom" required maxlength="100" placeholder="Objet de votre message">
+              </div>
+
+              <div class="form-group-custom full">
+                <label for="message">Message (max 1000 caractères)</label>
+                <textarea id="message" name="message" rows="5" class="form-control-custom" required maxlength="1000" placeholder="Votre message..." style="resize: vertical;"></textarea>
+                <div style="font-size: 0.75rem; color: var(--text-muted); text-align: right; margin-top: 0.2rem;" id="charCount">0 / 1000</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <button type="submit" class="action-btn btn-primary" style="padding: 14px 28px; width: 100%; justify-content: center; font-size: 1rem;">
+                <span>Envoyer le message</span>
+                <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const firstnameInput = document.getElementById('firstname');
+    const lastnameInput = document.getElementById('lastname');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+    const contactForm = document.getElementById('contactForm');
+
+    firstnameInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/[^a-zA-ZàâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ\s-]/g, '');
+      e.target.value = val.length > 0 ? val.charAt(0).toUpperCase() + val.slice(1).toLowerCase() : val;
+    });
+
+    lastnameInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/[^a-zA-ZàâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ\s-]/g, '');
+      e.target.value = val.toUpperCase();
+    });
+
+    messageInput.addEventListener('input', (e) => {
+      charCount.textContent = `${e.target.value.length} / 1000`;
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        e.preventDefault();
+        document.getElementById('error-email').style.display = 'block';
+        emailInput.focus();
+        return;
+      } else {
+        document.getElementById('error-email').style.display = 'none';
+      }
+
+      setTimeout(() => {
+        contactForm.reset();
+        charCount.textContent = "0 / 1000";
+      }, 500);
+    });
+  </script>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

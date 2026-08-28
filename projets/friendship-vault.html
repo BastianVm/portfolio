@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friendship Vault by Orange — Étude de cas | Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(24, 31, 42, 0.85);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .zoomable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .zoomable-img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../presentation.html" class="nav-item">Présentation</a>
+        <a href="../projets.html" class="nav-item active">Projets</a>
+        <a href="../competences.html" class="nav-item">Compétences</a>
+        <a href="../stage.html" class="nav-item">Stage</a>
+        <a href="../contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrapper" style="padding-top: 160px; padding-bottom: 8rem; min-height: 85vh;">
+    <div class="container">
+      
+      <div style="margin-bottom: 2rem;">
+        <a href="../projets.html" class="action-btn btn-glass" style="font-size: 0.85rem; padding: 8px 18px;">&larr; Retour aux projets</a>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <span class="project-meta" style="display: block; margin-bottom: 0.5rem;">Concept Campagne Orange · UI/UX · Branding · Scénographie</span>
+        <h1 class="reveal-item" style="font-size: clamp(2rem, 3.8vw, 3.2rem); font-weight: 900; letter-spacing: -1.5px; color: var(--text-main); margin-bottom: 1rem; white-space: nowrap;">
+          <span class="title-first-word">Friendship</span> <span class="highlight-title">Vault</span> by Orange:
+        </h1>
+        <p class="section-subtitle reveal-item">Conception d'un écosystème global de safe places interactives (cabines téléphoniques transformées), application UI/UX, identité visuelle et campagne print.</p>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Rôle</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">UI/UX Designer & Directeur Artistique</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Cible</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Génération Z</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Livrables</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Identité visuelle, Branding, Cabines, Application UI/UX & Print</span>
+        </div>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 1rem; border-radius: 36px; overflow: hidden; margin-bottom: 4rem;">
+        <div class="reveal-item" style="border-radius: 26px; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center; aspect-ratio: 16/9;">
+          <img src="../assets/images/Friendship vault/LogoType Principale.svg" alt="Logotype Principal Friendship Vault" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem; display: block;">
+        </div>
+      </div>
+
+      <div class="glass-card presentation-card reveal-container" style="margin-bottom: 4rem; padding: 4.5rem;">
+        <div class="presentation-text reveal-item">
+          <h2><span class="title-first-word">Le</span> <span class="highlight-title">contexte</span> et le brief:</h2>
+          <p class="lead-text" style="margin-top: 1.5rem;">
+            <em>Friendship Vault</em> est un projet conceptuel de campagne imaginé pour <strong>Orange</strong>, ciblant particulièrement la <strong>Génération Z</strong>. L'idée est de réinventer l'espace urbain en transformant d'anciennes cabines téléphoniques en "safe places" connectées et immersives.
+          </p>
+          <p class="text-muted">
+            Le défi consistait à concevoir toute l'identité de marque, l'ergonomie de l'application embarquée dans les cabines, ainsi que les supports physiques et publicitaires pour donner vie à ce concept de refuge urbain bienveillant.
+          </p>
+        </div>
+        <div class="reveal-item" style="background: rgba(220, 38, 38, 0.04); border: 1px solid rgba(220, 38, 38, 0.15); border-radius: 24px; padding: 2.5rem;">
+          <h3 style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.8rem;">Objectifs du projet</h3>
+          <p style="font-weight: 600; font-style: italic; color: var(--text-main); line-height: 1.6;">
+            "Offrir aux jeunes un espace physique et numérique sécurisant, propice aux confidences, à l'échange et au soutien émotionnel, tout en capitalisant sur l'héritage de connectivité d'Orange."
+          </p>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">1.</span> Identité <span class="highlight-title">visuelle</span>:</h2>
+        <p class="section-subtitle reveal-item">Recherche de concepts, moodboard, logotype, palette chromatique, typographies et zone de sécurité.</p>
+      </div>
+
+      <div class="reveal-container" style="margin-bottom: 1rem;">
+        <h3 class="reveal-item" style="font-size: 1.3rem; font-weight: 800; color: var(--text-main);">Moodboard & Recherche d'Ambiance</h3>
+      </div>
+      <div class="glass-card reveal-container" style="padding: 1rem; border-radius: 36px; overflow: hidden; margin-bottom: 3rem;">
+        <div class="reveal-item" style="border-radius: 26px; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/Friendship vault/Moodboard.png" alt="Moodboard Friendship Vault" class="zoomable-img" style="width: 100%; height: auto; display: block;">
+        </div>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/LogoType Principale.svg" alt="Logo Principal" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Logotype Principal</h3>
+            <p class="text-muted">Création de l'emblème graphique symbolisant le coffre-fort relationnel et l'écoute.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/LogoType declinaison.svg" alt="Déclinaison Logo" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Déclinaisons du Logo</h3>
+            <p class="text-muted">Variantes d'adaptation du logotype pour s'ajuster à tous les supports numériques et physiques.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/LogoType Monochrome Blanc.svg" alt="Monochrome Blanc" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Monochrome Blanc</h3>
+            <p class="text-muted">Version épurée sur fonds sombres.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/LogoType Monochrome Noir.svg" alt="Monochrome Noir" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Monochrome Noir</h3>
+            <p class="text-muted">Version contrastée pour supports clairs.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/zone securite logo.png" alt="Zone de sécurité logo" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Zone de Sécurité & Proportions</h3>
+            <p class="text-muted">Définition des règles d'exclusion et des marges de respiration du logo.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Palette de couleur.svg" alt="Palette de couleur" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Palette Chromatique</h3>
+            <p class="text-muted">Association des teintes chaleureuses et sécurisantes de la marque.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Typos.png" alt="Typographies" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Typographies</h3>
+            <p class="text-muted">Choix des polices d'écriture pour assurer la lisibilité et l'identité visuelle.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/element graphique.svg" alt="Éléments graphiques" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Éléments Graphiques</h3>
+            <p class="text-muted">Composants visuels et formes d'accompagnement de la charte.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">2.</span> Scénographie & <span class="highlight-title">Cabines</span>:</h2>
+        <p class="section-subtitle reveal-item">Modélisation des safe places dans l'espace urbain (États Libre, Occupé et Mode SOS).</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Libre.jpg" alt="Cabine Libre" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Cabine - État "Libre"</h3>
+            <p class="text-muted">Signalétique lumineuse extérieure indiquant que la cabine est disponible pour s'isoler ou discuter.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Occupé.jpg" alt="Cabine Occupée" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Cabine - État "Occupé"</h3>
+            <p class="text-muted">Indicateur visuel extérieur garantissant l'intimité et la sécurité de l'utilisateur à l'intérieur.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Mode SOS.png" alt="Mode SOS extérieur" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Cabine - Mode SOS</h3>
+            <p class="text-muted">Activation du mode d'urgence visuel pour signaler un besoin d'assistance immédiate.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/interieur.png" alt="Intérieur cabine" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Aménagement Intérieur</h3>
+            <p class="text-muted">Design chaleureux et intimiste pensé pour décompresser et se confier en toute sérénité.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 1rem; border-radius: 36px; overflow: hidden; margin-bottom: 4rem;">
+        <div class="reveal-item" style="border-radius: 26px; overflow: hidden; aspect-ratio: 16/9; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/Friendship vault/Mode SOS interieur.png" alt="Mode SOS intérieur" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">3.</span> UI/UX, <span class="highlight-title">Onboarding & Application</span>:</h2>
+        <p class="section-subtitle reveal-item">Conception des écrans, parcours utilisateurs, maquettes et carte téléphonique.</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/UX.svg" alt="UX Wireframes" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Parcours UX</h3>
+            <p class="text-muted">Architecture de l'information et réflexion sur l'expérience utilisateur de l'application.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/UI.svg" alt="UI Interfaces" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Interfaces UI</h3>
+            <p class="text-muted">Création des composants graphiques et de l'interface visuelle de l'application.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Onboarding.svg" alt="Onboarding interface" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Écrans d'Onboarding</h3>
+            <p class="text-muted">Séquence d'accueil et d'introduction pour guider les utilisateurs dans la cabine.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Maquette Onboarding.png" alt="Maquette Onboarding" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Maquette Onboarding en situation</h3>
+            <p class="text-muted">Mise en situation des écrans tactiles intégrés sur la console centrale.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Mockup Appli.png" alt="Mockup Appli" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Mockup Application Mobile</h3>
+            <p class="text-muted">Présentation des écrans finaux de l'application compagnon mobile.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/carte-mockup.png" alt="Carte mockup" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Carte Téléphonique / Collector</h3>
+            <p class="text-muted">Conception de la carte physique connectée avec QR code d'accès rapide.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">4.</span> Campagne <span class="highlight-title">Print</span>:</h2>
+        <p class="section-subtitle reveal-item">Déclinaison de la campagne publicitaire sur abribus et supports grand format.</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/Mockup Affiche 1.png" alt="Mockup Affiche 1" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Campagne Abribus (Visuel 1)</h3>
+            <p class="text-muted">Mise en situation de l'affiche publicitaire urbaine dans son contexte réel.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/Friendship vault/mockupAffiche.png" alt="Mockup Affiches multiples" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Série d'Affiches Print</h3>
+            <p class="text-muted">Déclinaisons visuelles de la campagne de sensibilisation pour la Gen Z.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="glass-card presentation-card reveal-container" style="padding: 4.5rem;">
+        <div class="presentation-text reveal-item">
+          <h2><span class="title-first-word">Bilan</span> & <span class="highlight-title">apprentissages</span>:</h2>
+          <p class="lead-text" style="margin-top: 1.5rem;">
+            Ce projet m'a permis de pousser la conception d'un produit bien au-delà du simple écran, en imaginant une expérience hybride mêlant architecture urbaine, design physique et application numérique.
+          </p>
+        </div>
+        <div class="reveal-item">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Compétences consolidées</h3>
+          <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-weight: 600;">
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Création d'une identité visuelle complète et déclinaisons de marque rigoureuses</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Conception d'expériences UI/UX multi-supports (écrans tactiles, appli mobile)</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Scénographie urbaine et intégration de concepts publicitaires (Print & Abribus)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Agrandissement image">
+  </div>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("lightboxModal");
+      const modalImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("lightboxClose");
+      const zoomableImages = document.querySelectorAll(".zoomable-img");
+
+      zoomableImages.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.classList.add("active");
+          modalImg.src = img.src;
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        modalImg.src = "";
+      };
+
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

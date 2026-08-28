@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stages & Expériences — Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    .timeline-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 3rem auto 0 auto;
+      padding: 1rem 0;
+    }
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: rgba(220, 38, 38, 0.3);
+      transform: translateX(-50%);
+    }
+    .timeline-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+      position: relative;
+      width: 100%;
+    }
+    .timeline-card-wrap {
+      width: 45%;
+    }
+    .timeline-center-badge {
+      position: absolute;
+      left: 50%;
+      top: 1.5rem;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      border: 4px solid #f3f4f7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+      z-index: 10;
+    }
+    .empty-space {
+      width: 45%;
+    }
+    .stage-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stage-btns {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 768px) {
+      .timeline-wrapper::before {
+        left: 30px;
+      }
+      .timeline-row {
+        flex-direction: column !important;
+        padding-left: 70px;
+      }
+      .timeline-card-wrap {
+        width: 100% !important;
+      }
+      .timeline-center-badge {
+        left: 30px !important;
+        transform: translateX(-50%) !important;
+      }
+      .empty-space {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fond dynamique subtil et texturé -->
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navbar Glassmorphism Flottante -->
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="presentation.html" class="nav-item">Présentation</a>
+        <a href="projets.html" class="nav-item">Projets</a>
+        <a href="competences.html" class="nav-item">Compétences</a>
+        <a href="stage.html" class="nav-item active">Stage</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main class="page-wrapper" style="padding-top: 140px; padding-bottom: 6rem; min-height: 85vh;">
+    <div class="container">
+      
+      <!-- En-tête de page -->
+      <div class="section-title-wrap reveal-container" style="text-align: center; margin-bottom: 3.5rem;">
+        <h2 class="reveal-item"><span class="title-first-word">Mes</span> <span class="highlight-title">stages</span> en entreprise:</h2>
+      </div>
+
+      <!-- Frise Chronologique -->
+      <div class="timeline-wrapper reveal-container">
+        
+        <!-- 2026 - Avantages Éco Énergie (À gauche) -->
+        <div class="timeline-row reveal-item">
+          <div class="timeline-card-wrap">
+            <div class="glass-card" style="padding: 2.5rem;">
+              <div class="stage-date">&#128197; 23 Mars - 17 Juin 2026 (44 jours)</div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text-main);">Avantages Éco Énergie</h3>
+              <p class="stage-role" style="font-weight: 700; color: var(--primary); margin-bottom: 0.8rem;">Designer UI/UX & Développeur Front-End</p>
+              <p class="text-muted" style="margin-bottom: 1.5rem;">
+                Conception, design, code, hébergement et optimisation complète du site internet de l'entreprise. Gestion de la communication visuelle sur LinkedIn et refonte des supports digitaux.
+              </p>
+              <div class="stage-btns">
+                <a href="projets/avantages-eco-energie.html" class="action-btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                  <span>Voir le projet</span>
+                  <span class="arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-center-badge">2026</div>
+          <div class="empty-space"></div>
+        </div>
+
+        <!-- 2025 - Gerflor (À droite) -->
+        <div class="timeline-row reveal-item" style="flex-direction: row-reverse;">
+          <div class="timeline-card-wrap">
+            <div class="glass-card" style="padding: 2.5rem;">
+              <div class="stage-date">&#128197; 6 Janvier - 21 Février 2025 (7 semaines)</div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text-main);">Stage chez Gerflor</h3>
+              <p class="stage-role" style="font-weight: 700; color: var(--primary); margin-bottom: 0.8rem;">Découverte du cycle de vie & Code source</p>
+              <p class="text-muted" style="margin-bottom: 1.5rem;">
+                Durant ce second stage chez Gerflor, j'ai pu découvrir de A à Z le cycle de vie d'un projet ainsi que les différentes méthodologies utilisées sur GitLab.
+              </p>
+              <div class="stage-btns">
+                <a href="assets/pdf/Rapport de stage 2025.pdf" target="_blank" class="action-btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                  <span>Rapport 2025</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-center-badge">2025</div>
+          <div class="empty-space"></div>
+        </div>
+
+        <!-- 2024 - Gerflor (À gauche) -->
+        <div class="timeline-row reveal-item">
+          <div class="timeline-card-wrap">
+            <div class="glass-card" style="padding: 2.5rem;">
+              <div class="stage-date">&#128197; 6 Mai - 7 Juin 2024 (5 semaines)</div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text-main);">Stage chez Gerflor</h3>
+              <p class="stage-role" style="font-weight: 700; color: var(--primary); margin-bottom: 0.8rem;">Développement & Tests Automatisés</p>
+              <p class="text-muted" style="margin-bottom: 1.5rem;">
+                Développement de scripts Selenium pour tester l'affichage du site, recherche de bugs et création de tests automatisés Cypress pour les formulaires.
+              </p>
+              <div class="stage-btns">
+                <a href="assets/pdf/Rapport de stage 2024.pdf" target="_blank" class="action-btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                  <span>Rapport 2024</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-center-badge">2024</div>
+          <div class="empty-space"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avantages Eco Energie — Étude de cas | Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(24, 31, 42, 0.85);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .zoomable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .zoomable-img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <header class="navbar-wrapper">
+    <nav class="glass-navbar">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-circle"></span>
+        BVM<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../presentation.html" class="nav-item">Présentation</a>
+        <a href="../projets.html" class="nav-item active">Projets</a>
+        <a href="../competences.html" class="nav-item">Compétences</a>
+        <a href="../stage.html" class="nav-item">Stage</a>
+        <a href="../contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrapper" style="padding-top: 160px; padding-bottom: 8rem; min-height: 85vh;">
+    <div class="container">
+      
+      <div style="margin-bottom: 2rem;">
+        <a href="../projets.html" class="action-btn btn-glass" style="font-size: 0.85rem; padding: 8px 18px;">&larr; Retour aux projets</a>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <span class="project-meta" style="display: block; margin-bottom: 0.5rem;">Stage Bachelor (44 jours) · UI/UX · Web Design · Communication</span>
+        <h1 class="reveal-item" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -1.5px; color: var(--text-main); margin-bottom: 1rem;">
+          <span class="title-first-word">Avantages</span> Eco <span class="highlight-title">Energie</span>:
+        </h1>
+        <p class="section-subtitle reveal-item">Refonte globale de l'identité visuelle, création des maquettes, développement du site web et gestion de la communication.</p>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Rôle</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">UI/UX Designer & Développeur Front-End</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Contexte</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Stage Bachelor (44 jours)</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Livrables</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Identité Visuelle, UI/UX, Site Web & Social Media</span>
+        </div>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 1rem; border-radius: 36px; overflow: hidden; margin-bottom: 4rem;">
+        <div class="reveal-item" style="border-radius: 26px; overflow: hidden; aspect-ratio: 16/9; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/projet AEE/couverture-charte.svg" alt="Couverture Charte" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+        </div>
+      </div>
+
+      <div class="glass-card presentation-card reveal-container" style="margin-bottom: 4rem; padding: 4.5rem;">
+        <div class="presentation-text reveal-item">
+          <h2><span class="title-first-word">Le</span> <span class="highlight-title">contexte</span> et le brief:</h2>
+          <p class="lead-text" style="margin-top: 1.5rem;">
+            Ce projet s'inscrit dans le cadre de mon stage de <strong>44 jours</strong> réalisé pour valider mon <strong>Bachelor</strong>. L'entreprise <em>Avantages Eco Energie</em> avait besoin d'une mise en valeur numérique globale et d'une structuration professionnelle de son image.
+          </p>
+          <p class="text-muted">
+            En tant que UI/UX Designer et Développeur Front-End, j'ai eu l'opportunité de piloter l'intégralité du projet : de la création de la charte graphique fondatrice jusqu'au développement front-end du site web, en passant par la conception des parcours utilisateurs et la stratégie de communication sur les réseaux sociaux.
+          </p>
+        </div>
+        <div class="reveal-item" style="background: rgba(220, 38, 38, 0.04); border: 1px solid rgba(220, 38, 38, 0.15); border-radius: 24px; padding: 2.5rem;">
+          <h3 style="color: var(--primary); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.8rem;">Objectifs de la mission</h3>
+          <p style="font-weight: 600; font-style: italic; color: var(--text-main); line-height: 1.6;">
+            "Créer une identité visuelle forte et cohérente, concevoir un site web ergonomique et performant, et asseoir durablement la présence de l'entreprise sur LinkedIn."
+          </p>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">1.</span> Identité <span class="highlight-title">visuelle</span>:</h2>
+        <p class="section-subtitle reveal-item">Création des bases graphiques, du logotype, de la typographie et des éléments de la charte.</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/logo-charte.svg" alt="Logo Charte" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Logotype & Déclinaisons</h3>
+            <p class="text-muted">Conception et vectorisation du logo officiel garantissant une parfaite lisibilité sur tous les supports.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/couleurs-charte.svg" alt="Couleurs Charte" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Palette Chromatique</h3>
+            <p class="text-muted">Sélection des teintes associées à l'efficacité énergétique et au secteur éco-responsable.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/typos-charte.svg" alt="Typos Charte" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Typographies</h3>
+            <p class="text-muted">Choix des polices d'écriture pour assurer la hiérarchie visuelle et l'accessibilité textuelle.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/elementsgraphique-charte.svg" alt="Éléments graphiques" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Éléments Graphiques</h3>
+            <p class="text-muted">Pictogrammes, formes et composants visuels récurrents de la charte.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item"><span class="title-first-word">2.</span> Maquettes & <span class="highlight-title">Figma</span>:</h2>
+        <p class="section-subtitle reveal-item">Conception de l'expérience utilisateur (UX) et de l'interface (UI).</p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 4/3; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/UX.svg" alt="Parcours UX" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Recherche & UX</h3>
+            <p class="text-muted">Étude des parcours de conversion et architecture de l'information sous forme de schémas fonctionnels.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 4/3; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/UI.svg" alt="Maquettes UI" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 1rem;">
+          </div>
+          <div class="project-body">
+            <h3>Maquettes UI Haute Fidélité</h3>
+            <p class="text-muted">Mise en application de la charte graphique sur l'ensemble des écrans clés du site.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item" style="margin-bottom: 0.4rem;"><span class="title-first-word">3.</span> Site web & <span class="highlight-title">mockups</span>:</h2>
+        <p class="section-subtitle reveal-item" style="margin-bottom: 1.2rem;">Intégration front-end, optimisation SEO et mise en situation sur différents supports.</p>
+        <div class="reveal-item">
+          <a href="https://www.avantages-ecoenergie.fr" target="_blank" class="action-btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">
+            Visiter le site web officiel &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 2rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/Mockup Iphone.png" alt="Mockup Iphone" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Version Mobile (iPhone)</h3>
+            <p class="text-muted">Aperçu du rendu responsive et fluide sur smartphone.</p>
+          </div>
+        </article>
+
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/Mockup Mac&Iphone.png" alt="Mockup Mac & Iphone" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Version Multi-écrans</h3>
+            <p class="text-muted">Mise en situation du design sur ordinateur et mobile.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem;">
+        <article class="glass-card project-card reveal-item">
+          <div class="project-thumb" style="aspect-ratio: 16/10; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            <img src="../assets/images/projet AEE/SEO site web.png" alt="SEO site web" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+          </div>
+          <div class="project-body">
+            <h3>Optimisation SEO</h3>
+            <p class="text-muted">Travail sur le référencement naturel et la structure sémantique du code.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item" style="margin-bottom: 0.4rem;"><span class="title-first-word">4.</span> Réseaux sociaux & <span class="highlight-title">LinkedIn</span>:</h2>
+        <p class="section-subtitle reveal-item" style="margin-bottom: 1.2rem;">Animation de la page entreprise et visuels de publication.</p>
+        <div class="reveal-item">
+          <a href="https://www.linkedin.com/company/aee-pro/posts/?feedView=all" target="_blank" class="action-btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">
+            Voir la page LinkedIn de l'entreprise &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal-container" style="margin-bottom: 1.2rem;">
+        <p class="reveal-item" style="font-size: 1.05rem; font-weight: 600; color: var(--text-muted);">
+          Voici la bannière LinkedIn officielle que j'ai conçue et réalisée pour l'entreprise :
+        </p>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 1rem; border-radius: 36px; overflow: hidden; margin-bottom: 3rem;">
+        <div class="reveal-item" style="border-radius: 26px; overflow: hidden; aspect-ratio: 16/6; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/projet AEE/banniere-linkedin.png" alt="Bannière LinkedIn" class="zoomable-img" style="width: 100%; height: 100%; object-fit: contain; padding: 0.5rem;">
+        </div>
+      </div>
+
+      <div class="reveal-container" style="margin-bottom: 1.5rem;">
+        <p class="reveal-item" style="font-size: 1.05rem; font-weight: 600; color: var(--text-muted);">
+          Voici des exemples de publications que j'ai conçues pour dynamiser la communication de l'entreprise sur le réseau :
+        </p>
+      </div>
+
+      <div class="projects-grid reveal-container" style="margin-bottom: 4rem; align-items: start;">
+        <div class="reveal-item" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(24,31,42,0.08); background: #fff; padding: 1rem; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/projet AEE/PosteLinkedIn1.png" alt="Post LinkedIn 1" class="zoomable-img" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+        </div>
+        <div class="reveal-item" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(24,31,42,0.08); background: #fff; padding: 1rem; display: flex; align-items: center; justify-content: center;">
+          <img src="../assets/images/projet AEE/PosteLinkedIn2.png" alt="Post LinkedIn 2" class="zoomable-img" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+        </div>
+      </div>
+
+      <div class="glass-card presentation-card reveal-container" style="padding: 4.5rem;">
+        <div class="presentation-text reveal-item">
+          <h2><span class="title-first-word">Bilan</span> & <span class="highlight-title">apprentissages</span>:</h2>
+          <p class="lead-text" style="margin-top: 1.5rem;">
+            Ce stage de 44 jours m'a permis d'intervenir sur l'ensemble de la chaîne de valeur numérique de l'entreprise : de la conceptualisation graphique et l'optimisation SEO jusqu'au développement front-end et la stratégie social media.
+          </p>
+        </div>
+        <div class="reveal-item">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Compétences consolidées</h3>
+          <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-weight: 600;">
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Création de A à Z d'une identité visuelle complète (logo, charte, typographies)</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Maquettage UX/UI et développement front-end responsive (multi-écrans)</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Optimisation du référencement naturel (SEO) du site web</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Gestion de la communication visuelle et de l'image de marque sur les réseaux sociaux</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Agrandissement image">
+  </div>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("lightboxModal");
+      const modalImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("lightboxClose");
+      const zoomableImages = document.querySelectorAll(".zoomable-img");
+
+      zoomableImages.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.classList.add("active");
+          modalImg.src = img.src;
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        modalImg.src = "";
+      };
+
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
