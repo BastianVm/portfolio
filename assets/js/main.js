@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* 2. Traînée de photos aléatoires */
+  /* 2. Traînée de photos aléatoires optimisée (anti-lag) */
   const hero = document.getElementById("hero");
   const cursorContainer = document.getElementById("cursor-trail");
   const thumbnails = [
@@ -198,11 +198,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hero && cursorContainer) {
     let lastX = 0, lastY = 0;
     let lastIndex = -1;
+    let throttleTimeout = false;
 
     hero.addEventListener("mousemove", (e) => {
+      if (throttleTimeout) return;
+      
+      throttleTimeout = setTimeout(() => {
+        throttleTimeout = false;
+      }, 50); // Limite l'exécution à toutes les 50ms pour fluidifier les performances
+
       const rect = hero.getBoundingClientRect();
       const x = e.clientX - rect.left, y = e.clientY - rect.top;
-      if (Math.hypot(x - lastX, y - lastY) > 200) {
+      if (Math.hypot(x - lastX, y - lastY) > 220) {
         lastX = x; lastY = y;
         spawnTrailImage(x, y);
       }
@@ -223,16 +230,16 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorContainer.appendChild(img);
 
       gsap.fromTo(img, 
-        { scale: 0.2, opacity: 0, rotation: (Math.random() - 0.5) * 40, filter: "blur(10px)" },
-        { scale: 1, opacity: 1, rotation: (Math.random() - 0.5) * 15, filter: "blur(0px)", duration: 0.5, ease: "back.out(1.7)" }
+        { scale: 0.2, opacity: 0, rotation: (Math.random() - 0.5) * 40 },
+        { scale: 1, opacity: 1, rotation: (Math.random() - 0.5) * 15, duration: 0.4, ease: "power2.out" }
       );
 
       setTimeout(() => {
         gsap.to(img, {
-          opacity: 0, scale: 0.8, filter: "blur(10px)", duration: 0.5,
+          opacity: 0, scale: 0.8, duration: 0.4,
           onComplete: () => { if (cursorContainer.contains(img)) cursorContainer.removeChild(img); }
         });
-      }, 800);
+      }, 700);
     }
   }
 
