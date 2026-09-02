@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footerPlaceholder) {
     const isInSubfolder = window.location.pathname.includes('/projets/') || window.location.pathname.includes('/legales/');
     const p = isInSubfolder ? '../' : '';
-    const legalPrefix = window.location.pathname.includes('/legales/') ? '' : 'legales/';
+    // Correction ici : gestion propre du préfixe des pages légales selon le dossier actuel
+    const legalPrefix = window.location.pathname.includes('/legales/') ? '' : (window.location.pathname.includes('/projets/') ? '../legales/' : 'legales/');
 
     footerPlaceholder.innerHTML = `
       <footer class="site-footer">
@@ -15,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- Colonne 1 : Logo & Bio -->
             <div class="footer-col">
               <a href="${p}index.html" class="footer-logo-link">
-                <span class="logo-circle"></span>
-                BVM<span>.</span>
+                <img src="${p}assets/icons/favicon.ico.png" alt="Logo BVM" class="footer-logo-img">
               </a>
               <p class="footer-desc">
                 Designer UI/UX & Développeur Front-End basé à Oullins (Métropole de Lyon). 
@@ -89,15 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
         .footer-logo-link {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          font-weight: 900;
-          font-size: 1.5rem;
           text-decoration: none;
-          color: var(--text-main);
           margin-bottom: 1rem;
         }
-        .footer-logo-link span span {
-          color: var(--primary);
+        .footer-logo-img {
+          height: 32px;
+          width: auto;
+          display: block;
         }
         .footer-desc {
           color: var(--text-muted);
@@ -205,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       throttleTimeout = setTimeout(() => {
         throttleTimeout = false;
-      }, 50); // Limite l'exécution à toutes les 50ms pour fluidifier les performances
+      }, 50);
 
       const rect = hero.getBoundingClientRect();
       const x = e.clientX - rect.left, y = e.clientY - rect.top;
