@@ -117,9 +117,23 @@ body {
   box-shadow: 0 20px 40px rgba(24, 31, 42, 0.08), 0 0 1px 1px rgba(255, 255, 255, 1) inset;
 }
 
-.nav-logo { display: flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 800; color: var(--text-main); text-decoration: none; white-space: nowrap; }
-.logo-circle { width: 9px; height: 9px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent-light)); box-shadow: 0 0 10px var(--primary-glow); }
-.nav-logo span { color: var(--primary); }
+.nav-logo { 
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  white-space: nowrap; 
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-logo:hover .logo-img {
+  transform: scale(1.05);
+}
 
 .nav-links { display: flex; align-items: center; gap: 0.4rem; }
 .nav-item { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 600; padding: 8px 18px; border-radius: 9999px; transition: all 0.3s ease; white-space: nowrap; }
@@ -266,11 +280,11 @@ body {
    OPTIMISATIONS DES PAGES DE DÉTAILS DE PROJETS
    ==================================================== */
 .page-wrapper {
-  padding-top: 100px !important; /* Réduit l'espace vide en haut sous la navbar */
+  padding-top: 100px !important;
 }
 
 .page-wrapper .container > div:first-child {
-  margin-bottom: 1rem !important; /* Resserre l'espace du bouton de retour */
+  margin-bottom: 1rem !important;
 }
 
 .page-wrapper .section-title-wrap h1 {
@@ -414,7 +428,11 @@ body {
     width: 100%;
   }
   .nav-logo { font-size: 0.78rem; gap: 3px; }
-  .logo-circle { width: 4px; height: 4px; }
+  
+  .logo-img {
+    height: 26px; /* Taille mobile adaptée */
+  }
+
   .nav-links { 
     display: flex;
     align-items: center;
