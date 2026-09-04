@@ -13,10 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container">
           <div class="footer-grid">
             
-            <!-- Colonne 1 : Logo & Bio -->
+            <!-- Colonne 1 : Logo, Nom & Bio -->
             <div class="footer-col">
               <a href="${p}index.html" class="footer-logo-link">
                 <img src="${p}assets/icons/favicon.ico.png" alt="Logo BVM" class="footer-logo-img">
+                <span class="footer-author-name">Bastian Vivier-Merle</span>
               </a>
               <p class="footer-desc">
                 Designer UI/UX & Développeur Front-End basé à Oullins (Métropole de Lyon). 
@@ -47,13 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
               </ul>
             </div>
 
-            <!-- Colonne 4 : Contact -->
+            <!-- Colonne 4 : Contact & Réseaux avec Logos -->
             <div class="footer-col">
               <h4 class="footer-title">Contact</h4>
               <ul class="footer-links-list">
                 <li><a href="mailto:bastian.viviermerle@gmail.com" class="footer-email">bastian.viviermerle@gmail.com</a></li>
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn &rarr;</a></li>
-                <li><a href="https://github.com" target="_blank" rel="noopener">GitHub &rarr;</a></li>
+                <li class="footer-social-btns">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" title="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener" class="footer-social-btn" title="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>GitHub</span>
+                  </a>
+                </li>
                 <li class="footer-location">📍 Oullins, Lyon (France)</li>
               </ul>
             </div>
@@ -89,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .footer-logo-link {
           display: inline-flex;
           align-items: center;
+          gap: 12px;
           text-decoration: none;
           margin-bottom: 1rem;
         }
@@ -96,6 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
           height: 32px;
           width: auto;
           display: block;
+        }
+        .footer-author-name {
+          font-weight: 800;
+          font-size: 1.05rem;
+          color: var(--text-main);
+          letter-spacing: -0.3px;
         }
         .footer-desc {
           color: var(--text-muted);
@@ -132,10 +148,35 @@ document.addEventListener("DOMContentLoaded", () => {
         .footer-email {
           word-break: break-all;
         }
+        .footer-social-btns {
+          display: flex;
+          gap: 10px;
+          margin-top: 0.2rem;
+          flex-wrap: wrap;
+        }
+        .footer-social-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(24, 31, 42, 0.05);
+          border: 1px solid var(--glass-border);
+          padding: 6px 12px;
+          border-radius: 9999px;
+          color: var(--text-main) !important;
+          font-size: 0.85rem !important;
+          font-weight: 600 !important;
+          transition: all 0.3s ease !important;
+        }
+        .footer-social-btn:hover {
+          background: var(--primary) !important;
+          color: #fff !important;
+          border-color: var(--primary) !important;
+          transform: translateY(-2px) !important;
+        }
         .footer-location {
           color: var(--text-muted);
           font-size: 0.92rem;
-          margin-top: 0.2rem;
+          margin-top: 0.4rem;
           font-weight: 500;
         }
         .footer-bottom-centered {
