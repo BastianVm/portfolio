@@ -292,38 +292,8 @@ body {
 .btn-large { padding: 16px 36px; font-size: 1.1rem; }
 
 /* ====================================================
-   OPTIMISATIONS DES PHOTOS DE PROJETS (Indépendantes et sans espaces vides)
+   STYLES GÉNÉRAUX DES CARTES & PROJETS
    ==================================================== */
-.page-wrapper {
-  padding-top: 100px !important;
-}
-
-.page-wrapper .container > div:first-child {
-  margin-bottom: 1rem !important;
-}
-
-.page-wrapper .section-title-wrap h1 {
-  white-space: normal !important;
-  word-break: break-word;
-}
-
-.page-wrapper .action-btn.btn-glass {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  border-color: var(--glass-border);
-  transition: all 0.3s ease;
-}
-
-.page-wrapper .action-btn.btn-glass:hover {
-  background: var(--primary);
-  color: #fff;
-  border-color: var(--primary);
-  transform: translateY(-2px);
-}
-
-/* Cartes Glassmorphism */
 .glass-card { 
   background: rgba(255, 255, 255, 0.82); 
   backdrop-filter: var(--glass-blur); 
@@ -340,50 +310,61 @@ body {
   transform: translateY(-6px); 
 }
 
-/* 1. Présentation (Photo de profil préservée) */
 .presentation-card { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 4rem; padding: 4.5rem; align-items: center; }
 .presentation-text .lead-text { font-size: 1.25rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-main); }
 .presentation-text .text-muted { font-size: 1.05rem; line-height: 1.7; margin-bottom: 2.5rem; color: var(--text-muted); }
 .btn-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .presentation-avatar { width: 100%; max-width: 320px; aspect-ratio: 1/1; object-fit: cover; border-radius: 28px; border: 2px solid #ffffff; box-shadow: 0 20px 40px rgba(24, 31, 42, 0.12); margin: 0 auto; }
 
-/* 2. Projets : Alignement indépendant (align-items: start) et hauteur naturelle pour éviter les espaces vides */
-.projects-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
-  gap: 2.5rem; 
-  align-items: start !important; 
+
+/* ====================================================
+   IMAGES DES PAGES DE DÉTAILS (Études de cas)
+   ==================================================== */
+.detail-image-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;
+  margin-bottom: 2rem;
 }
+
+.detail-image-card img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 20px;
+}
+
+
+/* ====================================================
+   STYLES DES CARTES DE PROJET
+   ==================================================== */
 .project-card { 
   padding: 1.8rem; 
   display: flex; 
   flex-direction: column; 
   height: auto !important; 
 }
-
 .project-thumb { 
   border-radius: 20px; 
   overflow: hidden; 
   border: 1px solid var(--glass-border); 
-  background: #ffffff !important; 
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  background: transparent !important; 
+  display: block !important;
   width: 100%;
   height: auto !important; 
 }
-
 .project-thumb img,
 .glass-card img.zoomable-img,
 .glass-card .reveal-item img { 
   width: 100% !important; 
   height: auto !important; 
-  object-fit: contain !important; 
-  padding: 0.5rem !important; 
+  object-fit: unset !important; 
+  padding: 0 !important; 
   display: block !important;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
 }
-
 .project-card:hover .project-thumb img { transform: scale(1.03); }
 .project-body { padding: 1.8rem 0.5rem 0.5rem 0.5rem; display: flex; flex-direction: column; flex-grow: 1; }
 .project-meta { font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
@@ -392,7 +373,30 @@ body {
 .card-arrow-btn { display: inline-flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: rgba(220, 38, 38, 0.05); color: var(--primary); text-decoration: none; font-weight: 700; border-radius: 14px; border: 1px solid rgba(220, 38, 38, 0.15); transition: all 0.3s ease; }
 .card-arrow-btn:hover { background: var(--primary); color: #fff; box-shadow: 0 4px 15px var(--primary-glow); }
 
-/* 3. Compétences */
+
+/* ====================================================
+   GRILLES PRINCIPALES (Accueil & Page Projets générale)
+   ==================================================== */
+body:has(#hero) .projects-grid,
+body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbox-modal)) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+  column-gap: 2.5rem !important;
+  align-items: stretch !important;
+}
+
+body:has(#hero) .projects-grid > *,
+body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbox-modal)) > * {
+  break-inside: auto !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  width: auto !important;
+}
+
+
+/* ====================================================
+   COMPÉTENCES & STAGE
+   ==================================================== */
 .skills-overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; align-items: start; }
 .skill-card { padding: 3rem 2.5rem; }
 .skill-icon-wrap { width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #ffffff; }
@@ -404,7 +408,6 @@ body {
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-tags span { font-size: 0.82rem; font-weight: 700; color: var(--primary); background: rgba(220, 38, 38, 0.05); border: 1px solid rgba(220, 38, 38, 0.15); padding: 5px 12px; border-radius: 8px; }
 
-/* 4. Stage (Accueil) */
 .stage-preview-card { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; padding: 4.5rem; align-items: center; }
 .stage-info h3 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.4rem; color: var(--text-main); }
 .stage-role { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
@@ -422,7 +425,6 @@ body {
    ADAPTATIONS UNIQUEMENT POUR VERSION MOBILE (< 960px)
    ==================================================== */
 @media (max-width: 960px) {
-  /* Modification 1 : Ajustement du padding et de la marge du logo pour ne plus être collé à gauche */
   .glass-navbar {
     padding: 6px 12px 6px 18px !important;
   }
@@ -431,7 +433,6 @@ body {
     margin-left: 6px !important;
   }
 
-  /* Modification 2 : Vagues / formes organiques et fluides animées en arrière-plan sur la section hero mobile */
   .hero-section {
     position: relative;
     overflow: hidden;
@@ -469,10 +470,10 @@ body {
 
   @keyframes mobileWaveAnim {
     0% {
-      transform: translate(0px, 0px) rotate(0deg) scale(1);
+      transform: rotate(0deg);
     }
     100% {
-      transform: translate(30px, 40px) rotate(180deg) scale(1.1);
+      transform: rotate(360deg);
     }
   }
 
@@ -499,6 +500,12 @@ body {
     padding: 2rem 1.2rem !important; 
     margin: 0 10px 1.5rem 10px !important; 
     box-sizing: border-box !important;
+  }
+
+  /* Espacement renforcé entre les cartes de projets sur mobile (Accueil et Page Projets) */
+  #projets .projects-grid,
+  .page-wrapper .projects-grid {
+    row-gap: 2.5rem !important;
   }
 
   .avatar-hello-wrap { display: none !important; }
@@ -603,4 +610,18 @@ body {
   }
 
   .hide-on-mobile { display: none !important; }
+
+  /* Surcharge radicale : détruit toutes les grilles de 2 colonnes sur mobile et empile TOUT en une seule colonne de 100% de largeur */
+  .page-wrapper div[style*="grid-template-columns"],
+  .page-wrapper div[style*="display: flex; gap"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .page-wrapper div[style*="grid-template-columns"] > *,
+  .page-wrapper div[style*="display: flex; gap"] > * {
+    width: 100% !important;
+  }
 }
