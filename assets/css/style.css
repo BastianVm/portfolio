@@ -425,6 +425,29 @@ body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbo
    ADAPTATIONS UNIQUEMENT POUR VERSION MOBILE (< 960px)
    ==================================================== */
 @media (max-width: 960px) {
+  /* Sécurité anti-défilement horizontal et centrage global */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .page-wrapper .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .玻璃-card, .glass-card, .project-card, .skill-card, .detail-image-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
   .glass-navbar {
     padding: 6px 12px 6px 18px !important;
   }
@@ -481,8 +504,9 @@ body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbo
     grid-template-columns: 1fr; 
     padding: 2rem 1.2rem !important; 
     gap: 2rem; 
-    margin: 0 10px 1.5rem 10px !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
+    width: 100% !important;
   }
   .presentation-avatar-wrap {
     display: none !important;
@@ -492,14 +516,16 @@ body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbo
     grid-template-columns: 1fr; 
     padding: 2rem 1.2rem !important; 
     gap: 2rem; 
-    margin: 0 10px 1.5rem 10px !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
+    width: 100% !important;
   }
 
   .glass-card, .project-card, .skill-card {
     padding: 2rem 1.2rem !important; 
-    margin: 0 10px 1.5rem 10px !important; 
+    margin: 0 0 1.5rem 0 !important; 
     box-sizing: border-box !important;
+    width: 100% !important;
   }
 
   /* Espacement renforcé entre les cartes de projets sur mobile (Accueil et Page Projets) */
@@ -611,17 +637,23 @@ body:has(.page-wrapper h2 span.highlight-title) .projects-grid:not(:has(.lightbo
 
   .hide-on-mobile { display: none !important; }
 
-  /* Surcharge radicale : détruit toutes les grilles de 2 colonnes sur mobile et empile TOUT en une seule colonne de 100% de largeur */
+  /* Surcharge radicale : détruit toutes les grilles de 2 colonnes sur mobile et empile TOUT en une seule colonne de 100% de largeur centrée */
   .page-wrapper div[style*="grid-template-columns"],
   .page-wrapper div[style*="display: flex; gap"] {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.5rem !important;
     width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .page-wrapper div[style*="grid-template-columns"] > *,
   .page-wrapper div[style*="display: flex; gap"] > * {
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
