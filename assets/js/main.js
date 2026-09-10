@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="footer-author-name">Bastian Vivier-Merle</span>
               </a>
               <p class="footer-desc">
-                Designer UI/UX & Développeur Front-End basé à Oullins (Métropole de Lyon). 
+                Designer UI/UX & Développeur Front-End basé à Lyon. 
                 <br></br>
                 Conception d'interfaces ergonomiques et intégration web moderne.
               </p>
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>GitHub</span>
                   </a>
                 </li>
-                <li class="footer-location">📍 Oullins, Lyon (France)</li>
+                <li class="footer-location">📍Lyon (France)</li>
               </ul>
             </div>
 
