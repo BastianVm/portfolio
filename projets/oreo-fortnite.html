@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oreo x Fortnite — Étude de cas | Bastian Vivier-Merle</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" href="../assets/icons/favicon.ico.png">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(24, 31, 42, 0.85);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .zoomable-img {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .zoomable-img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Force les grands titres et sous-titres sur une seule ligne uniquement sur PC (écrans larges) */
+    @media (min-width: 961px) {
+      .desktop-single-line {
+        white-space: nowrap !important;
+      }
+      .oreo-title {
+        font-size: clamp(1.8rem, 2.5vw, 2.6rem) !important;
+      }
+      .section-subtitle {
+        font-size: 1.05rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+<!-- Navbar Glassmorphism Flottante -->
+<header class="navbar-wrapper">
+  <nav class="glass-navbar">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/icons/favicon.ico.png" alt="Logo BVM" class="logo-img">
+    </a>
+
+      <div class="nav-links">
+        <a href="../presentation.html" class="nav-item">Présentation</a>
+        <a href="../projets.html" class="nav-item active">Projets</a>
+        <a href="../competences.html" class="nav-item">Compétences</a>
+        <a href="../stage.html" class="nav-item">Stage</a>
+        <a href="../contact.html" class="nav-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrapper" style="padding-top: 160px; padding-bottom: 8rem; min-height: 85vh;">
+    <div class="container">
+      <div class="section-title-wrap reveal-container">
+        <span class="project-meta" style="display: block; margin-bottom: 0.5rem;">Concept Collaboration · UI/UX · Branding · Gaming · Packaging</span>
+        <h1 class="reveal-item oreo-title desktop-single-line" style="font-weight: 900; letter-spacing: -1.5px; color: var(--text-main); margin-bottom: 1rem;">
+          <span class="title-first-word">Oreo</span> x <span class="highlight-title">Fortnite</span> — Unlock the Cookieverse :
+        </h1>
+        <p class="section-subtitle reveal-item desktop-single-line">Conception d'une campagne de collaboration inédite entre l'univers ludique de Fortnite et Oreo, incluant identité visuelle, loots ingame et packaging.</p>
+      </div>
+
+      <div class="glass-card reveal-container" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Cadre</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Projet Conceptuel de Marque (Janvier 2026)</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Domaines</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Direction Artistique, Gaming & UI/UX</span>
+        </div>
+        <div class="reveal-item">
+          <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Livrables</span>
+          <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-main);">Branding, Loots Ingame, Packaging & Maquette Web</span>
+        </div>
+      </div>
+
+      <!-- Brief & Concept -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 4rem;">
+        <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+          <img src="../assets/images/Projet Fortnite X Oreo/Brief.svg" alt="Brief Oreo x Fortnite" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Le Brief</h3>
+          <p style="color: var(--text-muted); font-size: 0.98rem;">Cadrage du projet, objectifs de communication et positionnement de la collaboration.</p>
+        </div>
+        <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+          <img src="../assets/images/Projet Fortnite X Oreo/Concept.svg" alt="Concept Oreo x Fortnite" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Le Concept</h3>
+          <p style="color: var(--text-muted); font-size: 0.98rem;">"Unlock the Cookieverse" : l'immersion des joueurs de Fortnite dans un monde gourmand et dynamique.</p>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item desktop-single-line"><span class="title-first-word">1.</span> Recherche & <span class="highlight-title">Benchmark</span>:</h2>
+        <p class="section-subtitle reveal-item desktop-single-line">Analyse des codes visuels de Fortnite et des campagnes de co-branding précédentes.</p>
+      </div>
+
+      <!-- Benchmark & Moodboard -->
+      <div class="reveal-container" style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Benchmark1.svg" alt="Benchmark 1" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Benchmark Partie 1</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Étude du marché et des collaborations gaming existantes.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Benchmark2.svg" alt="Benchmark 2" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Benchmark Partie 2</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Analyse des codes graphiques de Fortnite et des attentes de la communauté.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Mooboard.svg" alt="Moodboard Oreo x Fortnite" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Moodboard & Inspirations</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Planche d'inspiration fusionnant l'univers sombre et coloré du jeu avec le brun chocolat et le blanc crème d'Oreo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item desktop-single-line"><span class="title-first-word">2.</span> Charte <span class="highlight-title">Graphique</span>:</h2>
+        <p class="section-subtitle reveal-item desktop-single-line">Création du logotype, déclinaisons, palette colorimétrique, typographies et éléments graphiques.</p>
+      </div>
+
+      <!-- Charte Graphique -->
+      <div class="reveal-container" style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Logotype Principale.svg" alt="Logotype Principal" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Logotype Principal</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Fusion des identités visuelles des deux marques géantes.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Declinaison Logo.svg" alt="Déclinaison Logo" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Déclinaisons du Logo</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Variantes d'adaptation du logotype pour les différents formats.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Couleurs.svg" alt="Couleurs" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Palette Chromatique</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Mariage des teintes chocolat, crème et des éclats énergiques de Fortnite.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Typos.svg" alt="Typos" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Typographies</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Sélection des polices d'écriture pour donner un ton gaming et impactant.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/ElementsGraphique.svg" alt="Éléments Graphiques" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Éléments Graphiques</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Motifs et bannières texturées reprenant l'aspect biscuit et éclaboussures de lait.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item desktop-single-line"><span class="title-first-word">3.</span> Loots & <span class="highlight-title">Ingame</span>:</h2>
+        <p class="section-subtitle reveal-item desktop-single-line">Conception des éléments jouables (skins, pioches, accessoires) et des écrans de chargement.</p>
+      </div>
+
+      <!-- Loots & Ingame -->
+      <div class="reveal-container" style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/SPPA.svg" alt="SPPA Loots" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Loots et Équipements Ingame</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Design des accessoires, planeurs et pioches aux couleurs de la marque de biscuits.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/EcranChargement1.svg" alt="Écran chargement 1" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Écran de Chargement 1</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Première illustration immersive pour les joueurs.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/EcranChargement2.svg" alt="Écran chargement 2" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Écran de Chargement 2</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Mise en scène des personnages dans l'univers Cookieverse.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/EcranChargement3.svg" alt="Écran chargement 3" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Écran de Chargement 3</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Visuel final de l'événement promotionnel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item desktop-single-line"><span class="title-first-word">4.</span> Mockups & <span class="highlight-title">Packaging</span>:</h2>
+        <p class="section-subtitle reveal-item desktop-single-line">Mise en situation physique des boîtes de biscuits collector et des cartes d'accès exclusives.</p>
+      </div>
+
+      <!-- Mockups & Packaging -->
+      <div class="reveal-container" style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/MockupPackaging.svg" alt="Mockup Packaging" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Mockup Packaging</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Rendu 3D des paquets d'Oreo thématisés Fortnite en édition limitée.</p>
+          </div>
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Mockup Carte.svg" alt="Mockup Carte" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Mockup Carte Collector</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Cartes physiques à collectionner intégrant des loots ingame.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/Packaging.svg" alt="Packaging" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Détails du Packaging</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Aperçu rapproché des aplats et des informations légales et promotionnelles des boîtes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title-wrap reveal-container">
+        <h2 class="reveal-item desktop-single-line"><span class="title-first-word">5.</span> Expérience <span class="highlight-title">Digitale</span>:</h2>
+        <p class="section-subtitle reveal-item desktop-single-line">Maquette de la plateforme web dédiée à l'activation de la campagne.</p>
+      </div>
+
+      <!-- Expérience Digitale -->
+      <div class="reveal-container" style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start;">
+          <div class="glass-card reveal-item" style="padding: 1.8rem; display: flex; flex-direction: column;">
+            <img src="../assets/images/Projet Fortnite X Oreo/MaquetteSite.svg" alt="Maquette Site Web" class="zoomable-img" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.2rem; display: block;">
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-main);">Maquette du Site Web</h3>
+            <p style="color: var(--text-muted); font-size: 0.98rem;">Design de la landing page événementielle permettant d'enregistrer ses codes et de suivre sa progression.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card presentation-card reveal-container" style="padding: 4.5rem;">
+        <div class="presentation-text reveal-item">
+          <h2><span class="title-first-word">Bilan</span> & <span class="highlight-title">apprentissages</span>:</h2>
+          <p class="lead-text" style="margin-top: 1.5rem;">
+            Ce projet conceptuel m'a permis de travailler sur une synergie forte entre grande consommation et univers gaming, en gérant l'ensemble de la chaîne de création de la marque jusqu'aux produits dérivés.
+          </p>
+        </div>
+        <div class="reveal-item">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Compétences consolidées</h3>
+          <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-weight: 600;">
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Direction artistique de co-branding entre deux univers visuels opposés</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Création d'actifs graphiques et de loots orientés gaming (skins, pioches)</li>
+            <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--primary); font-weight: 900;">&check;</span> Design de packaging et de supports web événementiels</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Agrandissement image">
+  </div>
+
+  <!-- Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("lightboxModal");
+      const modalImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("lightboxClose");
+      const zoomableImages = document.querySelectorAll(".zoomable-img");
+
+      zoomableImages.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.classList.add("active");
+          modalImg.src = img.src;
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        modalImg.src = "";
+      };
+
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
